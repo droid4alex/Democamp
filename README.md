@@ -1,4 +1,4 @@
 # Democamp
-Basecamp clone. Features include a project to-do list, team dashboard, message board, schedule
+Democamp is a Basecamp clone that features team & project to-do lists, message boards, & schedules
 ---
 App Academy, 11-16-2020 Cohort
