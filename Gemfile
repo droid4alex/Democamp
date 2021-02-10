@@ -1,3 +1,4 @@
+gem 'jquery-rails'
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -28,7 +29,6 @@ gem 'pry-rails'
 gem 'binding_of_caller'
 gem 'better_errors'
 gem 'annotate'
-gem 'jquery-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
