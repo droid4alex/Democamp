@@ -1,11 +1,16 @@
 import React from 'react';
+import { Redirect } from 'react-router'
+import { Link } from 'react-router-dom'
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      name: 'testing',
+      role: 'testing',
+      password: '',
+      redirect: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,16 +22,18 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    e.preventDefault()
+    this.state.name = 'Test Name'
+    this.state.role = 'TestRole'
+    this.props.processForm(this.state)
+      .then(() => this.setState({ redirect: true }))
   }
 
   renderErrors() {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`Error${i}`}>
             {error}
           </li>
         ))}
@@ -34,11 +41,16 @@ class SessionForm extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    this.props.clearSessionErrors();
+  }
+
   render() {
+
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
+          <h1>Democamp Login Form</h1>
           <div className="login-form">
             <br />
             <label>Email:
@@ -57,7 +69,10 @@ class SessionForm extends React.Component {
               />
             </label>
             <br />
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <div className="login-form-errors">
+              {this.renderErrors()}
+            </div>
+            <input className="session-submit" type="submit" value={this.props.buttonText} />
           </div>
         </form>
       </div>

@@ -14,7 +14,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      render json: ["Logged out"] # add ${@user.email} before
+      render json: ["Logged out sucessfully"] # add ${@user.email} before
     else
       render json: ["User must be logged in"], status: 404
     end
