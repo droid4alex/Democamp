@@ -10,8 +10,8 @@ const Greeting = ({ currentUser, logout }) => {
     </nav>
   );
   const personalGreeting = () => (
-    <div className="header-greeting">
-      <h2 className="header-letter">{currentUser.email}</h2>
+    <div className="user-menu">
+      {currentUser.email[0].toUpperCase()}
       <button className="logout-button" onClick={logout}>Log Out</button>
     </div>
   );
