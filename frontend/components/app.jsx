@@ -10,6 +10,7 @@ const App = () => (
   <div>
     <header>
       <Link to="/" className="header-link">
+        <img src="/logo.png" alt="Democamp Logo" />
         <h1>Democamp Header Link</h1>
       </Link>
       <GreetingContainer />

@@ -14,9 +14,11 @@
  *= require_self
  */
 @import 'reset.scss';
+
 @import 'base/colors.scss';
 @import 'base/fonts.scss';
 @import 'base/layout.scss';
-body{
-  background-color: red;
-}
+
+@import 'components/greeting.scss';
+@import 'components/home.scss';
+@import 'components/session_form.scss';
