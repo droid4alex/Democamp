@@ -13,15 +13,17 @@
  *= require_tree .
  *= require_self
  */
-@import 'reset';
+
+@import 'reset.css';
 
 /* @import 'base/colors.scss';
 @import 'base/fonts.scss';
 @import 'base/layout.scss'; */
 
-@import 'components/home';
-@import 'components/greeting';
+@import 'components/home.scss';
+@import 'components/greeting.scss';
 /* @import 'components/session_form.scss'; */
+
 body{
   background-color: #f2f2f2;
 }
