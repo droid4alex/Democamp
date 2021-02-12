@@ -18,5 +18,5 @@
 @import 'base/fonts.scss';
 @import 'base/layout.scss';
 body{
-  background-color: red;
+  background-color: #f2f2f2;
 }
