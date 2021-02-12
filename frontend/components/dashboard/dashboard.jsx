@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Demo = ({ currentUser, logout }) => {
+const Dashboard = ({ currentUser, logout }) => {
   const demoboard = () => (
     <div>
       <center>
@@ -19,4 +19,4 @@ const Demo = ({ currentUser, logout }) => {
   return currentUser ? dashboard() : demoboard();
 };
 
-export default Demo;
+export default Dashboard;

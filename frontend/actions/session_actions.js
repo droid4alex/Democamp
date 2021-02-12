@@ -27,7 +27,9 @@ export const clearSessionErrors = () => {
 
 export const signup = user => dispatch => {
   return APIUtil.signup(user)
-    .then(user => dispatch(receiveCurrentUser(user)), error => dispatch(receiveSessionErrors(error.responseJSON)))
+    .then(user => dispatch(receiveCurrentUser(user)), error => {
+      return dispatch(receiveSessionErrors(error.responseJSON))
+    });
 };
 
 export const login = user => dispatch => {
