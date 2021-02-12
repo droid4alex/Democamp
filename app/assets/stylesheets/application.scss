@@ -16,13 +16,7 @@
 
 @import 'reset.css';
 
-/* @import 'base/colors.scss';
-@import 'base/fonts.scss';
-@import 'base/layout.scss'; */
-
-@import 'components/home.scss';
-@import 'components/greeting.scss';
-/* @import 'components/session_form.scss'; */
+@import 'components/*';
 
 body{
   background-color: #f2f2f2;
