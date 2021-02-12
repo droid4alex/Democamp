@@ -8,14 +8,27 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <header>
+    <div className="header">
+      <Link to="/" className="header-logo-img">
+        <img src="https://www.drupal.org/files/project-images/basecamp_2019_logo.png" alt="Democamp Logo" />
+      </Link>
       <Link to="/" className="header-link">
-        <img src="/logo.png" alt="Democamp Logo" />
-        <h1>Democamp Header Link</h1>
+        How it works
+      </Link>
+      <Link to="/" className="header-link">
+        Before & after
+      </Link>
+      <Link to="/" className="header-link">
+        Got clients?
+      </Link>
+      <Link to="/" className="header-link">
+        Pricing
+      </Link>
+      <Link to="/" className="header-link">
+        Support
       </Link>
       <GreetingContainer />
-    </header>
-    <h1>Nav elements</h1>    
+    </div>  
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />

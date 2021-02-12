@@ -4,14 +4,14 @@ const Dashboard = ({ currentUser, logout }) => {
   const demoboard = () => (
     <div>
       <center>
-        <h1>DEMO D E M O DEMO</h1>
+        <h1>D E M O</h1>
       </center>
     </div>
   );
   const dashboard = () => (
     <div>
       <center>
-        <h1>User Dashboard Here</h1>
+        <h1>USER DASHBOARD</h1>
       </center>      
     </div>
   );
