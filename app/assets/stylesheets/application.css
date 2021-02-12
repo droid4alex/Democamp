@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import 'reset.scss';
+@import 'reset.css';
 
 @import 'base/colors.scss';
 @import 'base/fonts.scss';
