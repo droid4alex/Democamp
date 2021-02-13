@@ -8,5 +8,6 @@
 
 User.destroy_all
 
+demo = User.create!(email: "demo@gmail.com", name: "demo", role: "demo", password: '123456')
 user1 = User.create!(email: "test5000@gmail.com", name: "Alex Lang", role: "tester #1", password: '123456')
 user2 = User.create!(email: "jdoe9182@gmail.com", name: "Jane Anderson", role: "CEO", password: '123456')
