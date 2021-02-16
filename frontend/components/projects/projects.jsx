@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dashboard = ({ currentUser, logout }) => {
+const Projects = ({ currentUser, logout }) => {
   const demoboard = () => (
     <div>
       <center>
@@ -19,4 +19,4 @@ const Dashboard = ({ currentUser, logout }) => {
   return currentUser ? dashboard() : demoboard();
 };
 
-export default Dashboard;
+export default Projects;

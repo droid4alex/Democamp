@@ -83,9 +83,35 @@ class SessionForm extends React.Component {
     this.props.clearSessionErrors();
   }
 
+  renderLowerSignup (){
+    let link, text;
+
+    if (this.props.formType === "Login") {
+      text = "Don't have an account?"
+      link = <Link to="/signup">Create account</Link>
+    } else {
+      text = "Already have an account?"
+      link = <Link to="/login">Sign in</Link>
+    };
+
+    return (
+      <div className="lowersignup">
+        <div className="lowersignup-text">
+          {text}
+        </div>
+        <div className="lowersignup-link">
+          {link}
+        </div>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="login-form-container">
+        <Link to="/" className="header-logo-img">
+          <img src="https://www.drupal.org/files/project-images/basecamp_2019_logo.png" alt="Democamp Logo" />
+        </Link>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
             <br />
@@ -110,6 +136,8 @@ class SessionForm extends React.Component {
             </div>
             <input className="session-submit" type="submit" value={this.props.formType} />
             {this.demoButton()}
+            <br />
+            {this.renderLowerSignup()}
           </div>
         </form>
       </div>
