@@ -1,48 +1,167 @@
 
-.login-form-container {
-  display: block;  
-  position: relative;
+.login-body {
+  padding: 0;
+  text-align: left;
+  background: #f6f2ef;
+  font-size: 17px;
+  font-family: 'Graphik', 'Helvetica Neue', helvetica, 'Apple Color Emoji', arial, sans-serif !important;
+  line-height: 1.4;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
 }
 
-.login-form-box{
-  display: flex;
-  position: relative;
+.login-logo {
+  display: flex;  
+  width: 100%;
+  margin-top: 50px;
+  height: 100px;
+  background: #f6f2ef;
   align-items: center;
   justify-content: center;
-  padding-top: 150px;
- }
+  margin-bottom: 50px;
+}
 
- .login-form {
-  float: left;
+.login-nav__logo {
+    width: 8.25em;
+    height: 0em;
+    margin: 0;
+    padding: 0.1rem;
+    margin-top: 4px;
+}
+
+
+.login-form-container {
+    display: flex;  
+    width: 100%;
+    margin-top: 100px;
+    height: 400px;
+    max-width: 448px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 -1px 10px, 0 1px 4px, 0 10px 30px #f3ece8;
+}
+
+.login-field {
+  font-weight: bold;
+}
+
+.login-input {
+  width: 100%;
+    max-width: 100%;
+    border-radius: 4px;
+    border: 1px solid #bfbfbf;
+    padding: 10px;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-transition: box-shadow 0.15s ease-in-out;
+    -moz-transition: box-shadow 0.15s ease-in-out;
+    -ms-transition: box-shadow 0.15s ease-in-out;
+    transition: box-shadow 0.15s ease-in-out;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 16px;
+    color: #000;
+    display: inline-block;
+    line-height: inherit;
+    white-space: normal;
+    vertical-align: middle;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.demo-button {  
+    transition: all 0.2s ease;
+    transition-property: color, background-color, border-color;
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #1d2d35;
+    color: #fff;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    line-height: normal;
+    -webkit-appearance: none;
+    border: 0.1em solid #1d2d35;
+    border-radius: 0;
+}
+
+.demo-button:hover {
+  color:gold;
+}
+
+.button-login{
+    transition: all 0.2s ease;
+    transition-property: color, background-color, border-color;
+    display: inline-block;
+    background-color: transparent;
+    color: #1d2d35;
+    font-size: 100%;
+    border-color: #1d2d35;
+    padding: 0.5em 1em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    line-height: normal;
+    -webkit-appearance: none;
+    border: 0.1em solid #1d2d35;
+    border-radius: 0;
+}
+
+.button-login:hover{
+  border-color: gold;
+
+}
+
+.lowersignup-text {
   color: black;
-  background-color: transparent;
-  font-family: sans-serif;
-  font-size: 20px;
-  width: 200px;
-  height: 150px;
- }
+  font-size: 13px;
+}
 
-.login-form-errors {
-  font-size: medium;
+.lowersignup-link {
+  color: blue;
+  font-size: 13px;
+}
+
+.lowersignup-link:link {
+  color: blue;
+}
+
+a.lowersignup-link:visited {
+  color: blue;
+}
+
+.login-demo-div{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-button-div {
+  display: flex;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.demo-button-div {
+  display: flex;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.login-form-errors{
   color: red;
-  padding: 4px 6px;
-  border-radius: 4px;
-}
-
-.login-signup-div {
-  display: flex;
-  padding: 1px;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.login-link {
-  display: flex;
-  padding: 1px;
-}
-
-.signin-link {
-  display: flex;
-  padding: 1px;
-  margin-left: 11px;
+  font-size: 11px;
 }

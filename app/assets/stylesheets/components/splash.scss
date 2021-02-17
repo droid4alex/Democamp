@@ -27,14 +27,11 @@ a {
     text-decoration-width: 0.1rem;
 }
 
-
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
     text-decoration: none;
 }
-
-
 
 .top-nav {
     position: relative;
@@ -47,21 +44,27 @@ a:-webkit-any-link {
     padding: 2rem;
     background-color: rgba(255,255,255,0.95);
 }
+
 .top-nav__logo {
     display: block;
     width: 8.25em;
     height: 0em;
     margin: 0;
     padding: 0.1rem;
-    margin-bottom: 39px;
+    margin-bottom: 40px;
 }
 
 .top-nav__list {
     display: flex;
     margin: 0;
     padding: 0;
-    font-size: 75%;
+    font-size: 78%;
     font-weight: bold;
+}
+
+.top-nav__link:hover {
+ text-decoration: underline;
+ text-decoration-color:gold;
 }
 
 .top-nav__list-item {
@@ -102,13 +105,20 @@ a:-webkit-any-link {
     border-color: #1d2d35;
 }
 
+.button--secondary:hover {
+    border-color:gold;
+}
+
 #button-signup {
   color: white;  
 }
 
+#button-signup:hover {
+  color: gold;  
+}
+
 a:visited {
   color:black;
-
 }
 
 .button {
@@ -126,4 +136,8 @@ a:visited {
     -webkit-appearance: none;
     border: 0.1em solid #1d2d35;
     border-radius: 0;
+}
+
+.centered-medium {
+    margin-top: 20px;
 }

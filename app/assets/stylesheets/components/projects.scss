@@ -12,9 +12,7 @@
 .centered-medium {
     text-align: center !important;
 }
-*, *:before, *:after {
-    box-sizing: border-box;
-}
+
 div {
     display: block;
 }
@@ -66,16 +64,6 @@ h1 {
     font-weight: bold;
 }
 
-html {
-    font-size: 10px;
-}
-*, *:before, *:after {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: border-box;
-}
-
 .grid__item {
     grid-column: 3 / -3;
     width: 100%;
@@ -101,14 +89,4 @@ p {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-}
-
-html {
-    font-size: 10px;
-}
-*, *:before, *:after {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: border-box;
 }
