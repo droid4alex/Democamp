@@ -147,6 +147,8 @@ class SessionForm extends React.Component {
             </div>
           </form>
         </div>
+        <div className="login-bottom">        
+        </div>
       </div>
     );
   }

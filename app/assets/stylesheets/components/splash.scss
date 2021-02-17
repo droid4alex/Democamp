@@ -45,6 +45,24 @@ a:-webkit-any-link {
     background-color: rgba(255,255,255,0.95);
 }
 
+.democamp-text-div {
+    position: absolute;
+    margin-left: 59px;
+    font-family: Helvetica;
+    font-size: 29px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+#user-icon{
+    background-color: blueviolet;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    padding: 0.25em 0.5em;
+    font-weight: normal;
+}
+
 .top-nav__logo {
     display: block;
     width: 8.25em;
