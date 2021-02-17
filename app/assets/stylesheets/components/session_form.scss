@@ -18,11 +18,11 @@
   display: flex;  
   width: 100%;
   margin-top: 50px;
+  margin-bottom: 50px;
   height: 100px;
   background: #f6f2ef;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 .login-nav__logo {
@@ -37,9 +37,8 @@
     display: flex;  
     width: 100%;
     margin-top: 100px;
-    height: 400px;
     max-width: 448px;
-    margin: 0 auto;
+    margin: auto;
     background: #fff;
     padding: 30px;
     border-radius: 6px;
@@ -53,6 +52,8 @@
 }
 .login-form-box {
   width: 100%;
+  display: block;
+  justify-content: space-between;
 }
 .login-field {
   font-weight: bold;
@@ -141,6 +142,7 @@
   color: black;
   font-size: 13px;
   font-weight: bold;
+  margin-top: 5px;
 }
 
 .lowersignup-link {
@@ -177,7 +179,8 @@ a.lowersignup-link:visited {
 }
 
 .login-form-errors{
+  margin-top: 7px;
   text-align: center;
   color: red;
-  font-size: 11px;
+  font-size: 13px;
 }
