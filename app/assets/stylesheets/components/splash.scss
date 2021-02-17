@@ -29,7 +29,6 @@ a {
 
 a:-webkit-any-link {
     color: -webkit-link;
-    cursor: pointer;
     text-decoration: none;
 }
 
@@ -109,7 +108,6 @@ svg:not(:root) {
 
 a:-webkit-any-link {
     color: -webkit-link;
-    cursor: pointer;
 }
 
 .top-nav__logo .icon {
@@ -121,6 +119,7 @@ a:-webkit-any-link {
     background-color: transparent;
     color: #1d2d35;
     border-color: #1d2d35;
+    cursor: pointer
 }
 
 .button--secondary:hover {
@@ -129,6 +128,7 @@ a:-webkit-any-link {
 
 #button-signup {
   color: white;  
+  cursor: pointer
 }
 
 #button-signup:hover {
