@@ -1,0 +1,129 @@
+.header {
+    display: block;
+    top: 0;
+    z-index: 19000;
+    width: 100%;
+}
+
+.a-screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+a {
+    font-size: 100%;
+    text-decoration: none;
+    vertical-align: baseline;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    transition: all 0.2s ease;
+    transition-property: text-decoration-color, text-decoration-thickness, text-decoration-width;
+    text-decoration-thickness: 0.1em;
+    text-decoration-width: 0.1rem;
+}
+
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+.top-nav {
+    position: relative;
+    z-index: 19000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    background-color: rgba(255,255,255,0.95);
+}
+.top-nav__logo {
+    display: block;
+    width: 8.25em;
+    height: 0em;
+    margin: 0;
+    padding: 0.1rem;
+    margin-bottom: 39px;
+}
+
+.top-nav__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 75%;
+    font-weight: bold;
+}
+
+.top-nav__list-item {
+    display: inline-block;
+    margin: 0 0.25em;
+    vertical-align: middle;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+nav {
+    display: block;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+}
+
+.top-nav__logo .icon {
+    fill: #1d2d35;
+}
+
+
+.button--secondary:link, .button--secondary:visited {
+    background-color: transparent;
+    color: #1d2d35;
+    border-color: #1d2d35;
+}
+
+#button-signup {
+  color: white;  
+}
+
+a:visited {
+  color:black;
+
+}
+
+.button {
+    transition: all 0.2s ease;
+    transition-property: color, background-color, border-color;
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #1d2d35;
+    color: #fff;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    line-height: normal;
+    -webkit-appearance: none;
+    border: 0.1em solid #1d2d35;
+    border-radius: 0;
+}
