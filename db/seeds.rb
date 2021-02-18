@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Project.destroy_all
 
 demo = User.create!(email: "demo@gmail.com", name: "demo", role: "demo", password: '123456')
 user1 = User.create!(email: "test5000@gmail.com", name: "Alex Lang", role: "tester #1", password: '123456')
 user2 = User.create!(email: "jdoe9182@gmail.com", name: "Jane Anderson", role: "CEO", password: '123456')
+project1 = Project.create!(title: "Finish Phase 4 of MVP", description: "HTML, CSS, UI and User tests", owner_id: demo.id)
+project2 = Project.create!(title: "Weekly product review", description: "Enhancements / bugs and feasibility / timelines", owner_id: demo.id)
