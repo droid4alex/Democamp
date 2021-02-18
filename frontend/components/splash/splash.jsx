@@ -31,6 +31,7 @@ const Splash = ({ currentUser, logout }) => {
   if (currentUser){
     personalNav = (
           <>
+            <li className="top-nav__list-item"><a className="top-nav__link" href="/">Home</a></li>
           </>
     )
   }else {
@@ -64,22 +65,6 @@ const Splash = ({ currentUser, logout }) => {
             {personalSplash}
           </ul>
         </nav>
-        {/* <Link to="/" className="header-link">
-          How it works
-        </Link>
-        <Link to="/" className="header-link">
-          Before & after
-        </Link>
-        <Link to="/" className="header-link">
-          Got clients?
-        </Link>
-        <Link to="/" className="header-link">
-          Pricing
-        </Link>
-        <Link to="/" className="header-link">
-          Support
-        </Link>
-        {personalSplash} */}
       </header>
       <ProjectsContainer />
     </div>
