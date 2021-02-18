@@ -9,14 +9,15 @@
 User.destroy_all
 Project.destroy_all
 
-demouser = User.create!(email: "demo@gmail.com", name: "demo", role: "demo", password: '123456')
-user1 = User.create!(email: "test@gmail.com", name: "Alex Lang", role: "tester #1", password: '123456')
+demouser = User.create!(email: "demo@gmail.com", name: "Demo", role: "Demo", password: '123456')
+user1 = User.create!(email: "test@gmail.com", name: "Alex Lang", role: "Tester", password: '123456')
 user2 = User.create!(email: "jane@gmail.com", name: "Jane Anderson", role: "CEO", password: '123456')
 demoproject1 = Project.create!(title: "Finish Phase 4 of MVP", description: "HTML, CSS, UI and User tests", owner_id: demouser.id)
 demoproject2 = Project.create!(title: "Weekly product review", description: "Enhancements / bugs and feasibility / timelines", owner_id: demouser.id)
 project1 = Project.create!(title: "Update system", description: "Ongoing system updates", owner_id: user1.id)
 project2 = Project.create!(title: "Customer outreach", description: "Gather valued customers and feedback", owner_id: user2.id)
 
+# to be added:
 # teams:{
 #       1: {
 #         id: 1,

@@ -49,6 +49,7 @@ class SessionForm extends React.Component {
               value={this.state.name}
               onChange={this.update('name')}
               className="login-input"
+              pattern="[a-zA-Z]{2,}"
             />
           </label>
           <br />
@@ -57,6 +58,7 @@ class SessionForm extends React.Component {
               value={this.state.role}
               onChange={this.update('role')}
               className="login-input"
+              pattern="[a-zA-Z]{2,}"
             />
           </label>
         </>        
@@ -117,10 +119,11 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="login-field">
               <label>Email
-                <input type="text"
+                <input type="email"
                   value={this.state.email}
                   onChange={this.update('email')}
                   className="login-input"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 />
               </label>
               <br />
