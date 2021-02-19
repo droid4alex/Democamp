@@ -90,3 +90,76 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
+.push_half--bottom {
+    margin-bottom: 0.625em !important;
+}
+
+.push--top {
+    margin-top: 1.25em !important;
+}
+
+.centered {
+    text-align: center;
+}
+
+.btn--add-icon {
+    background-image: url(/assets/icons/plus.svg);
+}
+
+.btn--with-icon {
+    padding-left: 2.25em;
+    background-position: 0.75em center;
+    background-repeat: no-repeat;
+    background-size: 1.25em auto;
+}
+
+.btn--small {
+    font-size: 1.3rem;
+    padding-top: 0.425em;
+    padding-bottom: 0.425em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 1.5em;
+    vertical-align: middle;
+    text-decoration: none;
+    text-align: center;
+    white-space: normal;
+    cursor: pointer;
+}
+
+.project-index__header, .project-index__description {
+    color: #877457;
+    font-weight: normal;
+    display: block;
+    justify-content: space-between;
+}
+
+.project-index__toolbar {
+    display: block;
+    justify-content: space-between;
+    top: 0;
+    left: auto;
+    right: 0;
+    z-index: 4;
+    margin: -0.5rem 0 0 0;
+    color: #000;
+}
+
+.centered {
+    text-align: center;
+}
+
+
+.project-index__toolbar--new {
+    display: flex;
+    left: 0;
+    right: auto;
+}
+
+.options-menu__expansion-toggle{
+    display: flex;
+}
