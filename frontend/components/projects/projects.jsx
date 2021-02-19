@@ -9,9 +9,7 @@ const Projects = ({ currentUser, logout }) => {
   );
   const dashboard = () => (
     <div>
-      <center>
-        <h1>Projects</h1>
-      </center>      
+
     </div>
   );
 
