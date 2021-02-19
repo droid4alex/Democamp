@@ -59,8 +59,16 @@ Democamp is a full stack web application.
   * For example, see user-icon code below:
 ```javascript
   <ul className="top-nav__list">
-    <li className="top-nav__list-item"><a className="button button--secondary" id="user-icon">{currentUser.email[0].toUpperCase()}</a></li>
-    <li className="top-nav__list-item"><button className="button-login" onClick={logout}>Log Out</button></li>
+    <li className="top-nav__list-item">
+      <a className="button button--secondary" id="user-icon">
+        {currentUser.name[0].toUpperCase()}
+      </a>
+    </li>
+    <li className="top-nav__list-item">
+      <button className="button-login" onClick={logout}>
+        Log Out
+      </button>
+    </li>
   </ul>
 ```
 ### Projects
