@@ -20,4 +20,16 @@ class Project < ApplicationRecord
   belongs_to :owner,
     foreign_key: :owner_id,
     class_name: :User
+
+  has_many :teams,
+    foreign_key: :project_id,
+    class_name: :Team
+
+  has_many :todos,
+    foreign_key: :project_id,
+    source: :Todo
+
+  has_many :messages,
+    foreign_key: :project_id,
+    source: :Message
 end

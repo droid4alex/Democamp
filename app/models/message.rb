@@ -16,4 +16,13 @@
 #  index_messages_on_project_id  (project_id)
 #
 class Message < ApplicationRecord
+  validates :title, :body, :author_id, :project_id, presence: true
+
+  belongs_to :project_messages,
+    foreign_key: :project_id,
+    source: :Project
+
+  belongs_to :author,
+    foreign_key: :author_id,
+    class_name: :User
 end

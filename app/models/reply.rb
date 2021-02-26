@@ -15,4 +15,9 @@
 #  index_replies_on_message_id  (message_id)
 #
 class Reply < ApplicationRecord
+  validates :body, :author_id, presence: true
+
+  belongs_to :reply_author,
+    foreign_key: :author_id,
+    class_name: :User
 end

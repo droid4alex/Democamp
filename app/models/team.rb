@@ -14,4 +14,9 @@
 #  index_teams_on_project_id  (project_id)
 #
 class Team < ApplicationRecord
+  validates :member_id, :project_id, presence: true
+
+  belongs_to :user
+  belongs_to :project
+
 end
