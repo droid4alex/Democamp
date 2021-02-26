@@ -1,0 +1,27 @@
+=> [[32m#<User:0x00007fcd9c0e3640[0m
+  id: [1;34m4[0m,
+  email: [31m[1;31m"[0m[31mdemo@gmail.com[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mDemo[1;31m"[0m[31m[0m,
+  role: [31m[1;31m"[0m[31mDemo[1;31m"[0m[31m[0m,
+  password_digest: [31m[1;31m"[0m[31m$2a$12$oJ6DSszwO6e8r.qbfLatEumIjJQlrgErXD3RMSjmE8icTI4zRYx1y[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mZpePV2MFUM9kKzZK9E0QOw[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m26[0m [1;34;4mFeb[0m [1;34m2021[0m [1;34m12[0m:[1;34m29[0m:[1;34m34[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m26[0m [1;34;4mFeb[0m [1;34m2021[0m [1;34m12[0m:[1;34m29[0m:[1;34m34[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<User:0x00007fcd9c0cd5e8[0m
+  id: [1;34m5[0m,
+  email: [31m[1;31m"[0m[31mtest@gmail.com[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mAlex Lang[1;31m"[0m[31m[0m,
+  role: [31m[1;31m"[0m[31mTester[1;31m"[0m[31m[0m,
+  password_digest: [31m[1;31m"[0m[31m$2a$12$3IFJY.kdMhbWFmpT1utGSez1t1eBsUnSgJrgVZmqW4twi0THDY9Gy[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31mz5OuOSUEsUAKevfhLtQ-4g[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m26[0m [1;34;4mFeb[0m [1;34m2021[0m [1;34m12[0m:[1;34m29[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m26[0m [1;34;4mFeb[0m [1;34m2021[0m [1;34m12[0m:[1;34m29[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<User:0x00007fcd9c0cc5d0[0m
+  id: [1;34m6[0m,
+  email: [31m[1;31m"[0m[31mjane@gmail.com[1;31m"[0m[31m[0m,
+  name: [31m[1;31m"[0m[31mJane Anderson[1;31m"[0m[31m[0m,
+  role: [31m[1;31m"[0m[31mCEO[1;31m"[0m[31m[0m,
+  password_digest: [31m[1;31m"[0m[31m$2a$12$0qJih8odAABhprpkAgKnaO8uTEgEkHYLPiJVdvn6dkpfN6IPTqF6u[1;31m"[0m[31m[0m,
+  session_token: [31m[1;31m"[0m[31m2s5S6VDvBaljNAE68bOVgw[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m26[0m [1;34;4mFeb[0m [1;34m2021[0m [1;34m12[0m:[1;34m29[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m26[0m [1;34;4mFeb[0m [1;34m2021[0m [1;34m12[0m:[1;34m29[0m:[1;34m35[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m]

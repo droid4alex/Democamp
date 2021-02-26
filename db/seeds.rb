@@ -5,9 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require 'date'
 User.destroy_all
 Project.destroy_all
+Team.destroy_all
+Todo.destroy_all
+Message.destroy_all
+Reply.destroy_all
 
 demouser = User.create!(email: "demo@gmail.com", name: "Demo", role: "Demo", password: '123456')
 user1 = User.create!(email: "test@gmail.com", name: "Alex Lang", role: "Tester", password: '123456')
@@ -16,61 +20,15 @@ demoproject1 = Project.create!(title: "Finish Phase 4 of MVP", description: "HTM
 demoproject2 = Project.create!(title: "Weekly product review", description: "Enhancements / bugs and feasibility / timelines", owner_id: demouser.id)
 project1 = Project.create!(title: "Update system", description: "Ongoing system updates", owner_id: user1.id)
 project2 = Project.create!(title: "Customer outreach", description: "Gather valued customers and feedback", owner_id: user2.id)
-
-# to be added:
-# teams:{
-#       1: {
-#         id: 1,
-#         project_id: 1
-#       },
-#       2: {
-#         id: 2,
-#         project_id: 2
-#       },
-#     },
-#     todos:{
-#       1: {
-#         id: 1,
-#         title: "Recruitment",
-#         status: false,
-#         project_id: 1,
-#         assignee_id: 2
-#       },
-#       2: {
-#         id: 2,
-#         title: "Decide on office expenses",
-#         status: false,
-#         project_id: 2,
-#         assignee_id: 1
-#       },
-#   },
-#     messages:{
-#       1: {
-#         id: 1,
-#         title: "Who to recruit?",
-#         body: "We need more team members!",
-#         project_id: 1,
-#         author_id: 1
-#       },
-#       2: {
-#         id: 2,
-#         title: "Budget",
-#         body: "Lets discuss our overall financial situation",
-#         project_id: 2,
-#         author_id: 2
-#       },
-#     },
-#     replies:{
-#       1: {
-#         id: 1,
-#         body: "Found a potential new advisor, I will draft the interview questions",
-#         message_id: 1,
-#         author_id: 2
-#     },
-#       2: {
-#         id: 2,
-#         body: "Company is doing fine, I'm worried about my own finances!",
-#         message_id: 2,
-#         author_id: 1
-#     }
-#   }
+team1 = Team.create!(project_id: demoproject1.id, member_id: demouser.id)
+team2 = Team.create!(project_id: demoproject1.id, member_id: user1.id)
+team3 = Team.create!(project_id: demoproject1.id, member_id: user2.id)
+team4 = Team.create!(project_id: demoproject2.id, member_id: demouser.id)
+team5 = Team.create!(project_id: demoproject2.id, member_id: user2.id)
+todo1 = Todo.create!(title: "Recruitment", status: false, project_id: demoproject1.id, assignee_id: demouser.id, due_date: (DateTime.now() + 20))
+todo2 = Todo.create!(title: "Decide on ice cream expenses", status: false, project_id: demoproject1.id, assignee_id: demouser.id, due_date: (DateTime.now() + 21))
+todo3 = Todo.create!(title: "Decide on office expenses", status: false, project_id: demoproject2.id, assignee_id: demouser.id, due_date: (DateTime.now() + 22))
+message1 = Message.create!(title: "Who to recruit?", body: "We need more team members!", project_id: demoproject1.id, author_id: demouser.id)
+message2 = Message.create!(title: "Budget", body: "Lets discuss our overall financial situation", project_id: demoproject1.id, author_id: user1.id)
+reply1 = Reply.create!(body: "Found a potential new advisor, I will draft the interview questions", message_id: message1.id, author_id:user1.id)
+reply2 = Reply.create!(body: "Company is doing fine, I'm worried about my own finances!", message_id: message2.id, author_id:demouser.id)
