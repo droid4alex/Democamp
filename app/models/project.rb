@@ -27,9 +27,9 @@ class Project < ApplicationRecord
 
   has_many :todos,
     foreign_key: :project_id,
-    source: :Todo
+    class_name: :Todo
 
   has_many :messages,
     foreign_key: :project_id,
-    source: :Message
+    class_name: :Message
 end

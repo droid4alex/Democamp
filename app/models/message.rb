@@ -18,9 +18,9 @@
 class Message < ApplicationRecord
   validates :title, :body, :author_id, :project_id, presence: true
 
-  belongs_to :project_messages,
+  belongs_to :messages_board,
     foreign_key: :project_id,
-    source: :Project
+    class_name: :Project
 
   belongs_to :author,
     foreign_key: :author_id,

@@ -31,7 +31,7 @@ class User < ApplicationRecord
 
   has_many :assigned_todos,
     foreign_key: :assignee_id,
-    source: :Todo
+    class_name: :Todo
 
   has_many :messages,
     foreign_key: :author_id,

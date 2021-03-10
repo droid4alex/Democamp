@@ -16,7 +16,12 @@
 class Team < ApplicationRecord
   validates :member_id, :project_id, presence: true
 
-  belongs_to :user
-  belongs_to :project
+  belongs_to :user,
+    foreign_key: :member_id,
+    class_name: :User
+
+  belongs_to :project,
+    foreign_key: :project_id,
+    class_name: :Project
 
 end

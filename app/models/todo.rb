@@ -20,11 +20,11 @@ class Todo < ApplicationRecord
   validates :title, :assignee_id, :project_id, presence: true
   # before_validation :ensure_done_status
 
-  belongs_to :project_todos,
+  belongs_to :todos_board,
     foreign_key: :project_id,
-    source: :Project
+    class_name: :Project
 
   belongs_to :assignee,
     foreign_key: :assignee_id,
-    source: :User
+    class_name: :User
 end
