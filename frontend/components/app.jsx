@@ -6,9 +6,11 @@ import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import ProjectsContainer from './projects/projects_container';
 import ErrorsRender from './errors/errors';
+import NavContainer from './nav/nav_container'
 
 const App = () => (
   <div>
+    <NavContainer />
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
