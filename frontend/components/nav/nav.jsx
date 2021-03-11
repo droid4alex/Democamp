@@ -10,6 +10,7 @@ class Nav extends React.Component{
     let info = document.getElementsByClassName('hide-nav')
     for (let i = 0; i < info.length; i++) {
       info[i].style.display = "none"
+      console.log(info[i])
     }
   }
 
@@ -56,6 +57,23 @@ class Nav extends React.Component{
   render(){
     let personalSplash;
     let personalNav;
+    let userNav;
+    if (this.props.currentUser) {
+      userNav = (
+        <ul className="top-user__list">
+          <li className="top-nav__user-item"><Link to="/projects" className="top-nav__user-link">
+            <svg className="top-nav__user-item-svg" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m12.2421648 21.733253 7.3764753 1.266747h.2169551c.2169552 0 .3254328-.1151588.4339104-.2303176l2.1695515-2.2439747c.3254328-.2303176.3254328-.8061117 0-1.0364294-.2169551-.3454764-.759343-.3454764-.9762982 0l-.3254327.4014337 1.6271637-7.1398467.9759987-1.2463123c.2169551-.1151588.3254327-.3454764.2169551-.6909529-.1084776-.3454764-.2169551-.4606352-.4339103-.5757941-.2169551-.1151588-.5423879 0-.6508655.2303177l-.4336108.5553594-6.0747443-9.6733406c-.2169552-.34547645-.7593431-.46063527-1.0847758-.23031764l-5.85778923 3.4547645c-.10847758.11515881-.21695516.11515881-.32543274.23031763l-7.26799772 12.55231101-.55370577-1.0198289c-.10847758-.2303176-.32543273-.4606353-.54238789-.4606353-.21695515 0-.54238789.1151588-.65086547.3454765-.10847757.3454764-.10847757.5757941 0 .8061117l1.09609367 2.1714171v.1151588c.10847757.1151588.10847757.2303176.32543273.3454764.10847758.1151588.21695516.1151588.32543273.1151588l5.09844617.9212706 2.82041702-8.7520701zm-1.3017309-16.12223429 4.4475807-2.64865278 5.7493116 9.21270527-.1084776.6909529-1.6271637 7.0246879-5.9662667-10.1339759z" fill="#283c46" opacity=".9" /></svg>
+            My Projects
+            </Link></li>
+        </ul>
+      );
+    } else {
+      userNav = (
+        <ul className="top-user__list">
+        </ul>
+      );
+    }
+
     if (this.props.currentUser) {
       personalSplash = (
         // <div className="user-menu">
@@ -82,9 +100,6 @@ class Nav extends React.Component{
     if (this.props.currentUser) {
       personalNav = (
         <>
-          <li className="top-nav__list-item"><Link to="/projects">My Projects</Link>
-            {/* <a className="top-nav__link" href="/projects">My Projects</a> */}
-          </li>
         </>
       )
     } else {
@@ -111,7 +126,8 @@ return (
         </a>        
           <div className="democamp-text-div">
             <a className="democamp-text-a" href="/">Democamp</a>
-          </div>        
+          </div>
+        {userNav}
         <ul className="top-nav__list">
           {personalNav}
           {personalSplash}

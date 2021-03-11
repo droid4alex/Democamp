@@ -19,7 +19,6 @@ class Splash extends React.Component{
         <div className="grid grid--centered grid--formatted centered-medium info-div" id="howsplash">
           <h1 className="heading heading--xx-large grid__item grid__item--large">Work better, together.</h1>
           <p className="grid__item grid__item--medium flush--bottom">Democamp is more than just a project management tool — it’s a better way to work. Teams that switch to Democamp are more productive and better organized. They communicate better and require fewer meetings. And they’re far more efficient than before. Here’s how Democamp makes it happen.</p>
-          <h1 className="heading heading--xx-large grid__item grid__item--large"><br></br>Inside every project; all the tools teams need to get work done.</h1>
           <div className="bc-tools grid__item grid__item--large push--top">
             <nav className="bc-tools__nav">
               <a className="bc-tools__item bc-tools__item--pulse" onClick={() => this.scrollToBottom()}>
@@ -39,6 +38,7 @@ class Splash extends React.Component{
               </a>
             </nav>
           </div>
+          <h1 className="heading heading--xx-large grid__item grid__item--large">Inside every project; all the tools teams need to get work done.</h1>
           <p className="grid__item grid__item--medium flush--bottom">With Democamp, you break up your work into separate projects. Each project contains everything related to the work at hand; all the people involved, every discussion, every document, file, task, important date, etc. Everything!</p>
         </div>
         <div className="grid grid--centered grid--formatted centered-medium info-div" id="beforesplash">

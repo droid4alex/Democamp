@@ -5,7 +5,13 @@
     grid-template-columns: repeat(24, 1fr);
 }
 .grid {
-    max-width: 80vw;
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.main-content{
+    max-width: 90vw;
     margin: 0 auto;
     padding: 0;
 }
@@ -104,7 +110,7 @@ p {
 }
 
 .btn--add-icon {
-    background-image: url(/assets/icons/plus.svg);
+    background-image: url(https://raw.githubusercontent.com/droid4alex/Democamp/fee1fa62e3dcd7f975cd7bbb24839ee63a6f8b29/app/assets/images/plus.svg);
 }
 
 .btn--with-icon {
@@ -188,7 +194,7 @@ p {
     text-align: center;
     border: 0.2rem solid #fff;
     transition: all 0.2s ease-in-out;
-    width: 32%;
+    width: 31%;
     padding: 1.5em;
 }
 
