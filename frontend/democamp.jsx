@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  // window.getState = store.getState; // just for testing
-  // window.dispatch = store.dispatch;
+  window.getState = store.getState; // just for testing
+  window.dispatch = store.dispatch;
   // window.login = login;
   // window.logout = logout;
 
