@@ -41,6 +41,8 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
   end
 
+  resources :projects, only: [:index]
+
   resources :projects, only: [:show, :create, :update, :destroy] do
     resources :todos, only: [:index]
     resources :messages, only: [:index]
