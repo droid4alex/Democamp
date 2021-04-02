@@ -183,6 +183,10 @@ p {
     transition: all 0.2s ease-in-out;
 }
 
+.bc-tools__nav_nest{
+    justify-content: space-around;
+}
+
 .bc-tools__item{
     display: block;
     margin: 0 0 1em 0;
