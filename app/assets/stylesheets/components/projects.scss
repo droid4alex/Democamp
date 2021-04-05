@@ -14,6 +14,7 @@
     max-width: 90vw;
     margin: 0 auto;
     padding: 0;
+    border-color: white;
 }
 .centered-medium {
     text-align: center !important;
@@ -139,9 +140,11 @@ p {
 
 .project-index__header, .project-index__description {
     color: #877457;
-    font-weight: normal;
+    font-weight: bold;
     display: block;
     justify-content: space-between;
+    font-size: 40px;
+
 }
 
 .project-index__toolbar {
@@ -164,6 +167,7 @@ p {
     display: flex;
     left: 0;
     right: auto;
+    align-items: center;
 }
 
 .options-menu__expansion-toggle{
@@ -231,4 +235,61 @@ img {
 .bc-tools__summary{
     margin: 0;
     font-size: 75%;
+}
+
+.card-grid--projects{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.card__link{
+    width: 45vh;
+    font-size: 100%;
+    text-decoration: none;
+    vertical-align: baseline;
+    background: transparent;
+    margin: 8px;
+    padding: 0;
+    color: inherit;
+    transition: all 0.2s ease;
+    transition-property: text-decoration-color, text-decoration-thickness, text-decoration-width;
+    text-decoration-thickness: 0.1em;
+}
+
+.card__content{
+    height: 20vh;
+    margin: 5px 10px;
+    text-align: left;
+    text-align: left;
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px transparentize(black, 0.8);
+
+    h1{
+        font-weight: bold;
+    }
+    
+    h2{
+        margin: 0;
+      }
+    
+    p{
+        margin: 0;
+        padding: 5px;
+        font-size: 16px;
+    } 
+}
+
+.card__description{
+    font-size: 16px;
 }
