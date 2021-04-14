@@ -4,6 +4,12 @@ export const fetchProject = id => {
   })
 }
 
+export const fetchAllProjects = () => {
+  return $.ajax({
+    url: `api/projects/`
+  })
+}
+
 export const fetchProjects = (id) => {
   return $.ajax({
     url: `api/users/${id}/projects`

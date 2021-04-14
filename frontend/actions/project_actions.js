@@ -25,8 +25,14 @@ export const fetchProject = id => dispatch => {
     fail(res => dispatch(receiveProjectErrors(res.responseJSON.errors)))
 }
 
-export const fetchProjects = (id, projectType) => dispatch => {
-  return APIUtil.fetchProjects(id, projectType).
+export const fetchProjects = (id) => dispatch => {
+  return APIUtil.fetchProjects(id).
+    then(res => dispatch(receiveProjects(res.projects))).
+    fail(res => dispatch(receiveProjectErrors(res.responseJSON.errors)))
+}
+
+export const fetchAllProjects = () => dispatch => {
+  return APIUtil.fetchAllProjects().
     then(res => dispatch(receiveProjects(res.projects))).
     fail(res => dispatch(receiveProjectErrors(res.responseJSON.errors)))
 }

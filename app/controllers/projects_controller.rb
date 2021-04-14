@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = current_user.owned_projects
-    if (Object.keys(@projects).length === 0)
+    if (@projects.length === 0)
       @errors = ['Projects not found']
     end
     render "api/projects/index.json.jbuilder"
