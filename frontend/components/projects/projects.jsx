@@ -4,23 +4,30 @@ import { Link } from 'react-router-dom';
 class Projects extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {projects: []}
+    this.state = {}
   }
 
   getProjects(){
+    // this.state.push(this.props.currentUser.id);
+    // this.state.push(window.fetchAllProjects());
+    // this.state.push(this.props.fetchProjects(this.props.currentUser.id));
+    // this.props.fetchProjects(this.props.currentUser.id).
+    //   then(res => this.state.push(res))
 
-    // this.setState({ loading: true })
-    // if(!this.props.currentUser){
-    this.props.fetchProjects(this.props.currentUser.id).
-      then(res => this.props.fetchProject(this.props.match.params.projectId))
-    // }
-
-    // window.fetchAllProjects(res).then(console.log(res));
+    window.fetchAllProjects().then(res => console.log(res));
 
   }
+  // componentDidMount(){
+  //   this.state.projects = this.props.fetchAllProjects(this.props.currentUser.id);
+  //   this.props.fetchProjects(this.props.currentUser.id).
+  //     then(res => this.state.project.push(res))
+  //   // this.props.fetchProjects(this.props.currentUser.id).
+  //   //   then(res => this.props.fetchProject(this.props.match.params.projectId))
+  // }
 
   render(){
     this.getProjects();
+    // debugger
     return(
       <div id="main-content" className="loading__hide  u-hide-focus" data-appearing-on="" data-bucket-url="" data-bucket-id="" tabIndex="-1">
         <section className="project-index__section project-index__section--projects " data-role="project_group content_filter_group" data-projects-display="card" role="region" aria-label="My Projects">
