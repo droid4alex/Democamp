@@ -31,6 +31,12 @@ export const fetchTodos = id => dispatch => {
     fail(res => dispatch(receiveTodoErrors(res.responseJSON.errors)))
 }
 
+export const fetchAllTodos = () => dispatch => {
+  return APIUtil.fetchAllTodos().
+    then(res => dispatch(receiveTodos(res.todos))).
+    fail(res => dispatch(receiveTodoErrors(res.responseJSON.errors)))
+}
+
 export const createTodo = id => dispatch => {
   return APIUtil.createTodo(id).
     then(res => dispatch(receiveTodo(res.todo))).

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { signup, login, logout } from './util/session_api_util';
 import configureStore from './store/store'
 import Root from './components/root'
+import { fetchAllProjects } from './util/project_api_util'
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.getState = store.getState; // just for testing
   window.dispatch = store.dispatch;
+  window.fetchAllProjects = fetchAllProjects;
   // window.login = login;
   // window.logout = logout;
 

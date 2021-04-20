@@ -4,10 +4,23 @@ import { Link } from 'react-router-dom';
 class Projects extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {projects: []}
+  }
+
+  getProjects(){
+
+    // this.setState({ loading: true })
+    // if(!this.props.currentUser){
+    this.props.fetchProjects(this.props.currentUser.id).
+      then(res => this.props.fetchProject(this.props.match.params.projectId))
+    // }
+
+    // window.fetchAllProjects(res).then(console.log(res));
+
   }
 
   render(){
-    debugger
+    this.getProjects();
     return(
       <div id="main-content" className="loading__hide  u-hide-focus" data-appearing-on="" data-bucket-url="" data-bucket-id="" tabIndex="-1">
         <section className="project-index__section project-index__section--projects " data-role="project_group content_filter_group" data-projects-display="card" role="region" aria-label="My Projects">
@@ -17,31 +30,31 @@ class Projects extends React.Component {
             </h3>
           </header>
           <div className="card-grid--projects" data-role="project_group_items">
-            <a className="card__link" href="/projects/5">
+            <a className="card__link" href="api/projects/5">
               <div className="card__content">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 1 of MVP</h2>
                 <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>
               </div>
             </a>
-            <a className="card__link" href="/projects/5">
+            <a className="card__link" href="api/projects/5">
               <div className="card__content">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 2 of MVP</h2>
                 <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>
               </div>
             </a>
-            <a className="card__link" href="/projects/5">
+            <a className="card__link" href="api/projects/5">
               <div className="card__content">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 3 of MVP</h2>
                 <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>
               </div>
             </a>
-            <a className="card__link" href="/projects/5">
+            <a className="card__link" href="api/projects/5">
               <div className="card__content">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 4 of MVP</h2>
                 <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>
               </div>
             </a>
-            <a className="card__link" href="/projects/5">
+            <a className="card__link" href="api/projects/5">
               <div className="card__content">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 5 of MVP</h2>
                 <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>

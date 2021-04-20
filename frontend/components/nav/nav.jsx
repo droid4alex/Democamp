@@ -10,7 +10,6 @@ class Nav extends React.Component{
     let info = document.getElementsByClassName('hide-nav')
     for (let i = 0; i < info.length; i++) {
       info[i].style.display = "none"
-      console.log(info[i])
     }
   }
 

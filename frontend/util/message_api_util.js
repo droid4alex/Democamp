@@ -9,6 +9,12 @@ export const fetchMessages = id => {
   })
 }
 
+export const fetchAllMessages = () => {
+  return $.ajax({
+    url: `api/messages/`
+  })
+}
+
 export const createMessage = message => {
   return $.ajax({
     url: `api/messages`,

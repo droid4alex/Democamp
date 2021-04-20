@@ -10,6 +10,12 @@ export const fetchTodos = id => {
   })
 }
 
+export const fetchAllTodos = () => {
+  return $.ajax({
+    url: `api/todos/`
+  })
+}
+
 export const createTodo = todo => {
   return $.ajax({
     method: 'post',

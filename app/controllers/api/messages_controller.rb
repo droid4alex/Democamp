@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class Api::MessagesController < ApplicationController
  def index
   @project = Project.find(params[:project_id])
   if @project

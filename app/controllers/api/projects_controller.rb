@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+class Api::ProjectsController < ApplicationController
   def index
     # @projects = current_user.owned_projects
     @projects = Project.all

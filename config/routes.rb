@@ -39,22 +39,26 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
+    resources :users, only: [:show] do
+      resources :projects, only: [:index]
+    end
+    resources :projects, only: [:index]
+  
+    resources :projects, only: [:show, :create, :update, :destroy] do
+      resources :todos, only: [:index] #if not nested, remember to send ID through frontend + controoler
+      resources :messages, only: [:index]
+      # resources :teams, only: [:show, :create, :update]
+    end
+  
+    resources :todos, only: [:show, :create, :update, :destroy]
+  
+    resources :messages, only: [:show, :create, :update, :destroy] do
+      resources :replies, only: [:index]
+    end
+  
+    resources :replies, only: [:create, :update, :destroy]
   end
 
-  resources :projects, only: [:index]
 
-  resources :projects, only: [:show, :create, :update, :destroy] do
-    resources :todos, only: [:index] #if not nested, remember to send ID through frontend + controoler
-    resources :messages, only: [:index]
-    # resources :teams, only: [:show, :create, :update]
-  end
-
-  resources :todos, only: [:show, :create, :update, :destroy]
-
-  resources :messages, only: [:show, :create, :update, :destroy] do
-    resources :replies, only: [:index]
-  end
-
-  resources :replies, only: [:create, :update, :destroy]
 
 end

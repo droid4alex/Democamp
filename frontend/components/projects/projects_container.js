@@ -13,8 +13,9 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  fetchAllProjects: () => dispatch(fetchAllProjects()),
-  fetchProjects: id => dispatch(fetchProjects(id))
+  fetchProject: id => dispatch(fetchProject(id)),
+  fetchProjects: id => dispatch(fetchProjects(id)),
+  fetchAllProjects: () => dispatch(fetchAllProjects())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Projects);

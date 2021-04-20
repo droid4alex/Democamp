@@ -16,6 +16,12 @@ export const fetchMessages = (id) => dispatch => {
     fail(res => dispatch(receiveMessageErrors(res.responseJSON.errors)))
 }
 
+export const fetchAllMessages = () => dispatch => {
+  return APIUtil.fetchAllMessages().
+    then(res => dispatch(receiveMessages(res.messages))).
+    fail(res => dispatch(receiveMessageErrors(res.responseJSON.errors)))
+}
+
 export const createMessage = (message) => dispatch => {
   return APIUtil.createMessage(message).
     then(res => dispatch(receiveMessage(res.message))).
