@@ -1,11 +1,12 @@
 class Api::ProjectsController < ApplicationController
   def index
     @projects = current_user.owned_projects
-    #@projects = Project.all
+    # @projects = Project.all
     if (@projects.length === 0)
       @errors = ['Projects not found']
+    else
+      render "api/projects/index.json.jbuilder"
     end
-    render "api/projects/index.json.jbuilder"
   end
 
   def show

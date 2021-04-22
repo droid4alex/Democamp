@@ -6,7 +6,7 @@ export const fetchProject = id => {
 
 export const fetchAllProjects = () => {
   return $.ajax({
-    url: `api/projects/`
+    url: `api/projects`
   })
 }
 

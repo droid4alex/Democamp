@@ -7,7 +7,7 @@ import TodosReducer from './todo_reducer';
 const entitiesReducer = combineReducers({
   users: usersReducer,
   projects: ProjectsReducer,
-  messaages: MessagesReducer,
+  messages: MessagesReducer,
   todos: TodosReducer
 });
 

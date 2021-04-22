@@ -33,7 +33,7 @@ export const fetchProjects = (id) => dispatch => {
 
 export const fetchAllProjects = () => dispatch => {
   return APIUtil.fetchAllProjects().
-    then(res => dispatch(receiveProjects(res.projects))).
+    then(res => dispatch(receiveProjects(res))).
     fail(res => dispatch(receiveProjectErrors(res.responseJSON.errors)))
 }
 
