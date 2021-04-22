@@ -1,5 +1,6 @@
 class Api::TodosController < ApplicationController
   def index
+  @projects = current_user.owned_projects
   @project = Project.find(params[:project_id])
     if @project
       @todos = @project.todos
