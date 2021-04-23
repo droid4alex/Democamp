@@ -5,9 +5,10 @@ import { fetchProject } from '../../actions/project_actions';
 import { fetchProjects } from '../../actions/project_actions';
 import { fetchAllProjects } from '../../actions/project_actions';
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = ({ session, entities: { users, projects } }) => {
   return {
-    currentUser: users[session.id]
+    currentUser: users[session.id],
+    projects: projects
   };
 };
 

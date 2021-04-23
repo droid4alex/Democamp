@@ -34,8 +34,6 @@ class Projects extends React.Component {
 
   render(){
     // this.getProjects();
-    // debugger
-    console.log(new Date)
     return(
       <div id="main-content" className="loading__hide  u-hide-focus" data-appearing-on="" data-bucket-url="" data-bucket-id="" tabIndex="-1">
         <section className="project-index__section project-index__section--projects " data-role="project_group content_filter_group" data-projects-display="card" role="region" aria-label="My Projects">
