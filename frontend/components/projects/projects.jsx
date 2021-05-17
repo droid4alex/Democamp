@@ -4,36 +4,51 @@ import { Link } from 'react-router-dom';
 class Projects extends React.Component {
   constructor(props) {
     super(props)
-    this.projects = {}
-    this.state = {}
+    this.state = {
+      projects: {},
+      messages: {},
+      todos: {}
+    }
   }
 
   getProjects(){
-    // this.state.push(this.props.currentUser.id);
-    // this.state.push(window.fetchAllProjects());
-    // this.state.push(this.props.fetchProjects(this.props.currentUser.id));
-    // this.props.fetchProjects(this.props.currentUser.id).
-    //   then(res => this.state.push(res))
-
-    // window.fetchAllProjects()
-
+    let projectsReturn = ""
+    // console.log("getProjects()")
+    // console.log(this.state.projects)
+    // console.log(Object.keys(this.state.projects))
+    if (Object.keys(this.state.projects).length > 0) {
+      let values = Object.values(this.state.projects);
+      console.log(values)
+      values.map((key) => {
+        console.log(key.id)
+        console.log(key.title)
+        console.log(key.description)
+        projectsReturn = (
+          <a className="card__link" href="api/projects/">
+            <div className="card__content">
+              <h2 className="card__title flush" title="" data-role="content_filter_text">{key.title}</h2>
+              <p className="card__description flush" title="" data-role="content_filter_text">{key.description}</p>
+            </div>
+          </a>
+        )
+        console.log(projectsReturn) //this is an object, not a string, that's why it's not working
+      })
+    }
+    return (
+      <div className="card-grid--projects" data-role="project_group_items">
+        {projectsReturn}
+      </div>
+    )
   }
   componentDidMount(){
-    
-    // this.state.projects = this.props.fetchAllProjects(this.props.currentUser.id);
-    // this.props.fetchProjects(this.props.currentUser.id).
-    //   then(res => this.state.project.push(res))
-    // let projects;
-    this.props.fetchAllProjects().then(res => 
-      this.projects = res.projects,
-      console.log(new Date),
-      console.log(this.projects)
-      )
-    //   then(res => this.props.fetchProject(this.props.match.params.projectId))
+    console.log(this.props)
+    this.props.fetchAllProjects().then(projects => {
+      this.setState(projects)
+      })
+    console.log("projects.jsx componentDidMount")
   }
 
   render(){
-    // this.getProjects();
     return(
       <div id="main-content" className="loading__hide  u-hide-focus" data-appearing-on="" data-bucket-url="" data-bucket-id="" tabIndex="-1">
         <section className="project-index__section project-index__section--projects " data-role="project_group content_filter_group" data-projects-display="card" role="region" aria-label="My Projects">
@@ -43,6 +58,7 @@ class Projects extends React.Component {
             </h3>
           </header>
           <div className="card-grid--projects" data-role="project_group_items">
+            {this.getProjects()}
             <a className="card__link" href="api/projects/5">
               <div className="card__content">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 1 of MVP</h2>

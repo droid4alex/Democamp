@@ -5,17 +5,15 @@ import { fetchProject } from '../../actions/project_actions';
 import { fetchProjects } from '../../actions/project_actions';
 import { fetchAllProjects } from '../../actions/project_actions';
 
-const mapStateToProps = ({ session, entities: { users, projects } }) => {
+const mapStateToProps = (state) => {
   return {
-    currentUser: users[session.id],
-    projects: projects
+    currentUser: state.entities.users[state.session.id],
+    projects: fetchAllProjects()
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  fetchProject: id => dispatch(fetchProject(id)),
-  fetchProjects: id => dispatch(fetchProjects(id)),
   fetchAllProjects: () => dispatch(fetchAllProjects())
 });
 

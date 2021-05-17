@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.getState = store.getState; // just for testing
   window.dispatch = store.dispatch;
-  window.fetchAllProjects = fetchAllProjects;
+  window.fetchAllProjects = fetchAllProjects();
   // window.login = login;
   // window.logout = logout;
 
