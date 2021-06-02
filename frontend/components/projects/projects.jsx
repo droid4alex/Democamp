@@ -12,40 +12,33 @@ class Projects extends React.Component {
   }
 
   getProjects(){
-    let projectsReturn = ""
-    // console.log("getProjects()")
-    // console.log(this.state.projects)
-    // console.log(Object.keys(this.state.projects))
-    if (Object.keys(this.state.projects).length > 0) {
-      let values = Object.values(this.state.projects);
-      console.log(values)
-      values.map((key) => {
-        console.log(key.id)
-        console.log(key.title)
-        console.log(key.description)
-        projectsReturn = (
-          <a className="card__link" href="api/projects/">
+    let values = Object.values(this.state.projects);
+    if (values.length > 0){
+      let cardArrays = [];
+      for (let i = 0; i < (Object.keys(this.state.projects).length); i++) {
+        let href = "api/projects/" + values[i].id
+        cardArrays.push(
+          <a className="card__link" href={href} key={i}>
             <div className="card__content">
-              <h2 className="card__title flush" title="" data-role="content_filter_text">{key.title}</h2>
-              <p className="card__description flush" title="" data-role="content_filter_text">{key.description}</p>
+              <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
+              <p className="card__description flush" title="" data-role="content_filter_text">{values[i].description}</p>
             </div>
           </a>
         )
-        console.log(projectsReturn) //this is an object, not a string, that's why it's not working
-      })
+      }
+      return(
+        cardArrays
+      )
     }
-    return (
-      <div className="card-grid--projects" data-role="project_group_items">
-        {projectsReturn}
-      </div>
-    )
   }
-  componentDidMount(){
-    console.log(this.props)
+
+  componentDidMount (){
     this.props.fetchAllProjects().then(projects => {
       this.setState(projects)
-      })
-    console.log("projects.jsx componentDidMount")
+    })
+  }
+
+  componentWillUnmount() {
   }
 
   render(){
@@ -59,43 +52,12 @@ class Projects extends React.Component {
           </header>
           <div className="card-grid--projects" data-role="project_group_items">
             {this.getProjects()}
-            <a className="card__link" href="api/projects/5">
-              <div className="card__content">
-                <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 1 of MVP</h2>
-                <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>
-              </div>
-            </a>
-            <a className="card__link" href="api/projects/5">
-              <div className="card__content">
-                <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 2 of MVP</h2>
-                <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>
-              </div>
-            </a>
-            <a className="card__link" href="api/projects/5">
-              <div className="card__content">
-                <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 3 of MVP</h2>
-                <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>
-              </div>
-            </a>
-            <a className="card__link" href="api/projects/5">
-              <div className="card__content">
-                <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 4 of MVP</h2>
-                <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>
-              </div>
-            </a>
-            <a className="card__link" href="api/projects/5">
-              <div className="card__content">
-                <h2 className="card__title flush" title="" data-role="content_filter_text">Finish Phase 5 of MVP</h2>
-                <p className="card__description flush" title="" data-role="content_filter_text">HTML, CSS, UI and User tests</p>
-              </div>
-            </a>
             <aside className="project-index__toolbar project-index__toolbar--new hide-from-clients" role="presentation" data-behavior="hide_when_content_filter_active">
               <span className="options-menu options-menu--add-project" data-purpose="topic" data-behavior="expandable render_new_project_form_on_expand reveal_on_expand">
                 <button name="button" type="button" title="Start a new project…" className="options-menu__expansion-toggle btn btn--small btn--with-icon btn--add-icon" data-behavior="toggle_expansion_on_click">&nbsp; 	&nbsp; New</button>
               </span>
             </aside>
           </div>
-
         </section>
         <div className="bc-tools grid__item grid__item--large push--top">
           <nav className="bc-tools__nav bc-tools__nav-projects">

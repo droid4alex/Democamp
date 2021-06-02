@@ -33,8 +33,8 @@ export const fetchTodos = id => dispatch => {
 
 export const fetchAllTodos = () => dispatch => {
   return APIUtil.fetchAllTodos().
-    then(res => dispatch(receiveTodos(res.todos))).
-    fail(res => dispatch(receiveTodoErrors(res.responseJSON.errors)))
+    then(res => dispatch(receiveTodos(res))).
+    fail(res => dispatch(receiveTodoErrors(res)))
 }
 
 export const createTodo = id => dispatch => {

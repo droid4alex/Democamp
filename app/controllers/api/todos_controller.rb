@@ -4,18 +4,18 @@ class Api::TodosController < ApplicationController
   @project = Project.find(params[:project_id])
     if @project
       @todos = @project.todos
-      render 'api/todos/index'
+      render 'api/todos/index.json.jbuilder'
     else
-      render 'api/todos/index', status: 404
+      render 'api/todos/index.json.jbuilder', status: 404
     end
   end
 
   def show
     @todo = Todo.find(params[:id])
     if @todo
-      render 'api/todos/show'
+      render 'api/todos/show.json.jbuilder'
     else
-      render 'api/todos/show', status: 404
+      render 'api/todos/show.json.jbuilder', status: 404
     end
   end
 
