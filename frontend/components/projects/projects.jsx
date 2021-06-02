@@ -43,7 +43,7 @@ class Projects extends React.Component {
 
   setProjectState(project){
     console.log(project)
-    debugger
+    // debugger
   }
 
   render(){
