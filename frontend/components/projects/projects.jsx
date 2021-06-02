@@ -18,7 +18,7 @@ class Projects extends React.Component {
       for (let i = 0; i < (Object.keys(this.state.projects).length); i++) {
         let href = "api/projects/" + values[i].id
         cardArrays.push(
-          <a className="card__link" href={href} key={i}>
+          <a className="card__link" href={href} key={i} onClick={this.setProjectState(values[i])}>
             <div className="card__content">
               <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
               <p className="card__description flush" title="" data-role="content_filter_text">{values[i].description}</p>
@@ -39,6 +39,11 @@ class Projects extends React.Component {
   }
 
   componentWillUnmount() {
+  }
+
+  setProjectState(project){
+    console.log(project)
+    debugger
   }
 
   render(){

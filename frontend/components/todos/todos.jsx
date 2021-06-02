@@ -4,8 +4,8 @@ class Todos extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      projects: {},
-      messages: {},
+      // projects: {},
+      // messages: {},
       todos: {}
     }
   }
@@ -17,24 +17,50 @@ class Todos extends React.Component{
     });
   }
 
-  getTodos() {
+  getTodosRemaining() {
     let values = Object.values(this.state.todos);
     if (values.length > 0) {
-      let cardArrays = [];
+      let todosRemaining = [];
       for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
-        console.log(i)
-        // let href = "api/projects/" + values[i].id
-        // cardArrays.push(
-        //   <a className="card__link" href={href} key={i}>
-        //     <div className="card__content">
-        //       <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
-        //       <p className="card__description flush" title="" data-role="content_filter_text">{values[i].description}</p>
-        //     </div>
-        //   </a>
-        // )
+        console.log(values[i].status)
+        if (!values[i].status){
+          let href = "api/todos/" + values[i].id
+          todosRemaining.push(
+            <a className="card__link" href={href} key={i}>
+              <div className="card__content">
+                <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
+                Due: <p className="card__description flush" title="" data-role="content_filter_text">{values[i].due_date}</p>
+              </div>
+            </a>
+          )
+        }
       }
       return (
-        cardArrays
+        todosRemaining
+      )
+    }
+  }
+
+  getTodosComplete() {
+    let values = Object.values(this.state.todos);
+    if (values.length > 0) {
+      let todosComplete = [];
+      for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
+        console.log(values[i].status)
+        if (values[i].status) {
+          let href = "api/todos/" + values[i].id
+          todosComplete.push(
+            <a className="card__link" href={href} key={i}>
+              <div className="card__content">
+                <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
+                Due: <p className="card__description flush" title="" data-role="content_filter_text">{values[i].due_date}</p>
+              </div>
+            </a>
+          )
+        }
+      }
+      return (
+        todosComplete
       )
     }
   }
@@ -58,12 +84,16 @@ class Todos extends React.Component{
             </h3>
           </header>
           <div className="card-grid--projects" data-role="project_group_items">
-            {this.getTodos()}
+            {this.getTodosRemaining()}            
             <aside className="project-index__toolbar project-index__toolbar--new hide-from-clients" role="presentation" data-behavior="hide_when_content_filter_active">
               <span className="options-menu options-menu--add-project" data-purpose="topic" data-behavior="expandable render_new_project_form_on_expand reveal_on_expand">
                 <button name="button" type="button" title="Start a new project…" className="options-menu__expansion-toggle btn btn--small btn--with-icon btn--add-icon" data-behavior="toggle_expansion_on_click">&nbsp; 	&nbsp; New</button>
               </span>
             </aside>
+          </div>
+          <div className="card-grid--projects" data-role="project_group_items">
+            <h4>Completed</h4>
+            {this.getTodosComplete()}
           </div>
         </section>
           <div className="bc-tools grid__item grid__item--large push--top">
