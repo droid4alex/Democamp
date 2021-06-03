@@ -18,7 +18,7 @@ class Projects extends React.Component {
       for (let i = 0; i < (Object.keys(this.state.projects).length); i++) {
         let href = "api/projects/" + values[i].id
         cardArrays.push(
-          <a className="card__link" href={href} key={i} onClick={this.setProjectState(values[i])}>
+          <a className="card__link" href={href} key={i} onClick={() => {this.setProjectState(values[i])}}>
             <div className="card__content">
               <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
               <p className="card__description flush" title="" data-role="content_filter_text">{values[i].description}</p>
@@ -55,6 +55,7 @@ class Projects extends React.Component {
               <span>My Projects</span>
             </h3>
           </header>
+          
           <div className="card-grid--projects" data-role="project_group_items">
             {this.getProjects()}
             <aside className="project-index__toolbar project-index__toolbar--new hide-from-clients" role="presentation" data-behavior="hide_when_content_filter_active">
