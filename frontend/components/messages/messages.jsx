@@ -16,6 +16,11 @@ class Messages extends React.Component{
   render(){
     return (
       <div>
+        <header className="centered">
+          <h3 className="project-index__header break break--on-background push--top push_half--bottom">
+            <span>My Messages</span>
+          </h3>
+        </header>
         <div className="bc-tools grid__item grid__item--large push--top">
           <nav className="bc-tools__nav bc-tools__nav_nest">
             <a className="bc-tools__item bc-tools__item--pulse" href="#/messages">

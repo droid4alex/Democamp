@@ -77,10 +77,10 @@ class Todos extends React.Component{
   render(){
     return (
       <div>
-        <section className="project-index__section project-index__section--projects " data-role="project_group content_filter_group" data-projects-display="card" role="region" aria-label="My Projects">
+        <section className="project-index__section project-index__section--projects " data-role="project_group content_filter_group" data-projects-display="card" role="region" aria-label="Todos">
           <header className="centered">
             <h3 className="project-index__header break break--on-background push--top push_half--bottom">
-              <span>My Todos</span>
+              <span>My To-dos</span>
             </h3>
           </header>
           <div className="card-grid--projects" data-role="project_group_items">
