@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Projects extends React.Component {
+class Projects_Show extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -17,15 +17,12 @@ class Projects extends React.Component {
       let cardArrays = [];
       for (let i = 0; i < (Object.keys(this.state.projects).length); i++) {
         let href = "api/projects/" + values[i].id
-        let hrefz = values[i].id + "/projects/"
         cardArrays.push(
           <a className="card__link" href={href} key={i} onClick={() => {this.setProjectState(values[i])}}>
-            <Link to={hrefz}>
-              <div className="card__content">
-                <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
-                <p className="card__description flush" title="" data-role="content_filter_text">{values[i].description}</p>
-              </div>
-            </Link>
+            <div className="card__content">
+              <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
+              <p className="card__description flush" title="" data-role="content_filter_text">{values[i].description}</p>
+            </div>
           </a>
         )
       }
@@ -93,4 +90,4 @@ class Projects extends React.Component {
   }
 }
 
-export default Projects;
+export default Projects_Show;

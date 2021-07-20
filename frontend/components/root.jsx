@@ -7,6 +7,7 @@ import SplashContainer from "./splash/splash_container";
 import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import ProjectsContainer from './projects/projects_container';
+import ProjectsShowContainer from './projects_show/projects_show_container';
 import TodosContainer from './todos/todos_container';
 import MessagesContainer from './messages/messages_container';
 import ScheduleContainer from './schedule/schedule_container';
@@ -14,6 +15,7 @@ import ErrorsRender from './errors/errors';
 import NavContainer from './nav/nav_container'
 
 const Root = ({ store }) => {
+  (store.getState());
   return (
   <Provider store={store}>
     <HashRouter>
@@ -24,6 +26,7 @@ const Root = ({ store }) => {
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
           <AuthRoute exact path="/" component={SplashContainer} />
           <ProtectedRoute exact path="/projects" component={ProjectsContainer} />
+            <ProtectedRoute path="/:projectId/projects" component={ProjectsShowContainer} />
           <ProtectedRoute exact path="/todos" component={TodosContainer} />
           <ProtectedRoute exact path="/messages" component={MessagesContainer} />
           <ProtectedRoute exact path="/schedule" component={ScheduleContainer} />
