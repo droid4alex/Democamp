@@ -1,14 +1,16 @@
 class Api::MessagesController < ApplicationController
  def index
-  @projects = current_user.owned_projects
-  @project = Project.find(params[:project_id])
-  if @project
-    @messages = @project.messages
-    render 'api/messages/index'
-  else
-    @errors = ['Project not found']
-    render 'api/messages/index', status: 404
-  end
+    @messages = Message.all
+    render 'api/messages/index.json.jbuilder'
+  # @projects = current_user.owned_projects
+  # @project = Project.find(params[:project_id])
+  # if @project
+  #   @messages = @project.messages
+  #   render 'api/messages/index.json.jbuilder'
+  # else
+  #   @errors = ['Project not found']
+  #   render 'api/messages/index.json.jbuilder', status: 404
+  # end
  end
 
   def show

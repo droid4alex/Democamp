@@ -14,6 +14,11 @@ import ScheduleContainer from './schedule/schedule_container';
 import ErrorsRender from './errors/errors';
 import NavContainer from './nav/nav_container'
 
+import MessagesShowContainer from './messages/messages_container';
+import TodosShowContainer from './messages/messages_container';
+import ScheduleShowContainer from './messages/messages_container';
+import RepliesShowContainer from './messages/messages_container';
+
 const Root = ({ store }) => {
   (store.getState());
   return (
@@ -26,10 +31,14 @@ const Root = ({ store }) => {
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
           <AuthRoute exact path="/" component={SplashContainer} />
           <ProtectedRoute exact path="/projects" component={ProjectsContainer} />
-            <ProtectedRoute path="/:projectId/projects" component={ProjectsShowContainer} />
           <ProtectedRoute exact path="/todos" component={TodosContainer} />
           <ProtectedRoute exact path="/messages" component={MessagesContainer} />
           <ProtectedRoute exact path="/schedule" component={ScheduleContainer} />
+            <ProtectedRoute path="/:projectId/messages" component={MessagesShowContainer} />
+            <ProtectedRoute path="/:projectId/todos" component={TodosShowContainer} />
+            <ProtectedRoute path="/:projectId/schedule" component={ScheduleShowContainer} />
+            <ProtectedRoute path="/:projectId/messages/:messageId/replies" component={RepliesShowContainer} />
+          <ProtectedRoute path="/:projectId/" component={ProjectsShowContainer} />
           <Route exact path="*" component={ErrorsRender} />
         </Switch>        
       </div>

@@ -5,46 +5,46 @@ class Projects_Show extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      project: {},
       projects: {},
       messages: {},
       todos: {}
     }
   }
 
-  getProjects(){
-    let values = Object.values(this.state.projects);
-    if (values.length > 0){
-      let cardArrays = [];
-      for (let i = 0; i < (Object.keys(this.state.projects).length); i++) {
-        let href = "api/projects/" + values[i].id
-        cardArrays.push(
-          <a className="card__link" href={href} key={i} onClick={() => {this.setProjectState(values[i])}}>
-            <div className="card__content">
-              <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
-              <p className="card__description flush" title="" data-role="content_filter_text">{values[i].description}</p>
-            </div>
-          </a>
-        )
-      }
-      return(
-        cardArrays
-      )
-    }
-  }
+  // getTodos(){
+  //   let values = Object.values(this.state.todos);
+  //   if (values.length > 0){
+  //     let cardArrays = [];
+  //     for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
+  //       let href = "api/projects/" // + this.props.projectId
+  //       cardArrays.push(
+  //         <a className="card__link" href={href} key={i} onClick={() => {console.log(values[i])}}>
+  //           <Link to={"todos/" + values[i].id}>
+  //             <div className="card__content">
+  //               <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
+  //               <p className="card__description flush" title="" data-role="content_filter_text">{values[i].title}</p>
+  //             </div>
+  //           </Link>
+  //         </a>
+  //       )
+  //     }
+  //     return(
+  //       cardArrays
+  //     )
+  //   }
+  // }
 
   componentDidMount (){
-    this.props.fetchAllProjects().then(projects => {
-      this.setState(projects)
+    // debugger
+    this.props.fetchAllTodos().then(todos => {
+      this.setState(todos)
     })
   }
 
   componentWillUnmount() {
   }
 
-  setProjectState(project){
-    console.log(project)
-    // debugger
-  }
 
   render(){
     // debugger
@@ -53,15 +53,15 @@ class Projects_Show extends React.Component {
         <section className="project-index__section project-index__section--projects " data-role="project_group content_filter_group" data-projects-display="card" role="region" aria-label="My Projects">
           <header className="centered">
             <h3 className="project-index__header break break--on-background push--top push_half--bottom">
-              <span>My Projects</span>
+              <span>{this.props.projectId}</span>
             </h3>
           </header>
           
           <div className="card-grid--projects" data-role="project_group_items">
-            {this.getProjects()}
+            {/* {this.getTodos()} */}
             <aside className="project-index__toolbar project-index__toolbar--new hide-from-clients" role="presentation" data-behavior="hide_when_content_filter_active">
               <span className="options-menu options-menu--add-project" data-purpose="topic" data-behavior="expandable render_new_project_form_on_expand reveal_on_expand">
-                <button name="button" type="button" title="Start a new project…" className="options-menu__expansion-toggle btn btn--small btn--with-icon btn--add-icon" data-behavior="toggle_expansion_on_click">&nbsp; 	&nbsp; New</button>
+                <button name="button" type="button" title="Start a new project…" className="options-menu__expansion-toggle btn btn--small btn--with-icon btn--add-icon" data-behavior="toggle_expansion_on_click">&nbsp; 	&nbsp; Edit</button>
               </span>
             </aside>
           </div>

@@ -268,10 +268,9 @@ img {
 }
 
 .card__content{
-    height: 20vh;
+    height: 25vh;
     margin: 5px 10px;
-    text-align: left;
-    text-align: left;
+    text-align: center;
     background-color: white;
     padding: 10px;
     margin: 0;
@@ -294,5 +293,9 @@ img {
 }
 
 .card__description{
+    font-size: 16px;
+}
+
+.card__description__icons{
     font-size: 16px;
 }

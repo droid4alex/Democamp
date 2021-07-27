@@ -45,6 +45,7 @@ Rails.application.routes.draw do
     end
     resources :projects, only: [:index]
     resources :todos, only: [:index]
+    resources :messages, only: [:index]
   
     resources :projects, only: [:show, :create, :update, :destroy] do
       resources :todos, only: [:index] #if not nested, remember to send ID through frontend + controoler

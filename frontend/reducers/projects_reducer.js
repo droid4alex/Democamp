@@ -7,7 +7,9 @@ const ProjectsReducer = (state = _projects, action) => {
   Object.freeze(state)
   switch (action.type) {
     case RECEIVE_PROJECT:
-      return Object.assign({}, state, { [action.project.id]: action.project })
+      
+      return Object.assign({}, state, { [action.project]: action.project })
+      // return action
     case RECEIVE_PROJECTS:
       return action.projects
     default:
