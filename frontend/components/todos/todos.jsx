@@ -27,7 +27,7 @@ class Todos extends React.Component{
           let href = "api/todos/" + values[i].id
           todosRemaining.push(
             <a className="card__link" href={href} key={i}>
-              <div className="card__content">
+              <div className="card__content__todo">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
                 Due: <p className="card__description flush" title="" data-role="content_filter_text">{values[i].due_date}</p>
               </div>

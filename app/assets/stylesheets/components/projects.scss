@@ -139,7 +139,7 @@ p {
 }
 
 .project-index__header, .project-index__description {
-    color: #877457;
+    color: #3a280d;
     font-weight: bold;
     display: block;
     justify-content: space-between;
@@ -233,7 +233,17 @@ img {
     width: 3em;
     height: 3em;
     margin: 0.5em;
+    border: 0.1rem solid #fff;
+    border-radius: 1.5em;
 }
+
+.bc-tools__icon:hover{
+    animation: border-pulse 2s 0.8;
+    animation-delay: 0s;
+    border: 0.3rem solid yellow;
+}
+
+
 
 .bc-tools__summary{
     margin: 0;
@@ -276,7 +286,7 @@ img {
     margin: 0;
     border-radius: 5px;
     box-shadow: 0px 2px 5px transparentize(black, 0.8);
-
+    border: 0.2rem solid #fff;
     h1{
         font-weight: bold;
     }
@@ -290,6 +300,81 @@ img {
         padding: 5px;
         font-size: 16px;
     } 
+}
+
+.card__content:hover{
+    animation: border-pulse 1s 0.8;
+    animation-delay: 0s;
+}
+
+.card__content__todo{
+    height: 25vh;
+    margin: 5px 10px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px transparentize(black, 0.8);
+    border: 0.2rem solid #fff;
+    h1{
+        font-weight: bold;
+    }
+    
+    h2{
+        margin: 0;
+      }
+    
+    p{
+        margin: 0;
+        padding: 5px;
+        font-size: 16px;
+    } 
+}
+
+.card__content__todo:hover{
+    animation: border-pulse-todo 1s 0.8;
+    animation-delay: 0s;
+}
+
+@keyframes border-pulse-todo{
+    30% { border-color: #58ca4d; }
+    100% { border-color: #fff; }
+}
+
+.card__content__message{
+    height: 25vh;
+    margin: 5px 10px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px transparentize(black, 0.8);
+    border: 0.2rem solid #fff;
+    h1{
+        font-weight: bold;
+    }
+    
+    h2{
+        margin: 0;
+      }
+    
+    p{
+        margin: 0;
+        padding: 5px;
+        font-size: 16px;
+    } 
+}
+
+.card__content__message:hover{
+    animation: border-pulse-message 1s 0.8;
+    animation-delay: 0s;
+}
+
+@keyframes border-pulse-message{
+    30% { border-color: #062ba3; }
+    100% { border-color: #fff; }
 }
 
 .card__description{

@@ -24,7 +24,7 @@ class Messages extends React.Component{
         cardArrays.push(
           <a className="card__link" key={i} onClick={() => { this.setMessageState(values[i]) }}>
             <Link to={values[i].id + "/"}>
-              <div className="card__content">
+              <div className="card__content__message">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
                 <p className="card__description flush" title="" data-role="content_filter_text">
                   {values[i].body}
@@ -66,7 +66,7 @@ class Messages extends React.Component{
   }
 
   render() {
-    debugger
+    // debugger
     return (
       <div id="main-content" className="loading__hide  u-hide-focus" data-appearing-on="" data-bucket-url="" data-bucket-id="" tabIndex="-1">
         <section className="project-index__section project-index__section--projects " data-role="project_group content_filter_group" data-projects-display="card" role="region" aria-label="My Projects">
