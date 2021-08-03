@@ -237,7 +237,15 @@ img {
     border-radius: 1.5em;
 }
 
-.bc-tools__icon:hover{
+.bc-tools__icon__project{
+    width: 3em;
+    height: 3em;
+    margin: 0.5em;
+    border: 0.1rem solid #fff;
+    border-radius: 1.5em;
+}
+
+.bc-tools__icon__project:hover{
     animation: border-pulse 2s 0.8;
     animation-delay: 0s;
     border: 0.3rem solid yellow;
@@ -383,4 +391,49 @@ img {
 
 .card__description__icons{
     font-size: 16px;
+}
+
+.RowStructure-leftChildren {
+    cursor: pointer;
+    margin-right: 16px;
+    min-width: 1px;
+}
+
+.RowStructure-leftChildren, .RowStructure-rightChildren {
+    display: flex;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.RowStructure.ItemRow--enabled:not(.ItemRow--focused):not(.ItemRow--highlighted) {
+    cursor: pointer;
+}
+
+.AddItemSquircleRow-leftElements {
+    align-items: center;
+    box-sizing: border-box;
+    color:  darkgrey;
+    display: inline-flex;
+    text-align: center;
+}
+
+.AddItemSquircleRow-box {
+    border-radius: 12px;
+    height: 48px;
+    width: 48px;
+    margin: 4px 16px 4px 0;
+    align-items: center;
+    border: 2px dashed darkgrey;
+    box-sizing: border-box;
+    color: darkgrey;
+    display: flex;
+    fill: darkgrey;
+    justify-content: center;
+    position: relative;
+}
+
+.Icon {
+    flex: 0 0 auto;
+    height: 16px;
+    width: 16px;
 }
