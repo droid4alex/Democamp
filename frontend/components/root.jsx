@@ -13,7 +13,6 @@ import MessagesContainer from './messages/messages_container';
 import ScheduleContainer from './schedule/schedule_container';
 import ErrorsRender from './errors/errors';
 import NavContainer from './nav/nav_container'
-
 import MessagesShowContainer from './messages/messages_container';
 import TodosShowContainer from './messages/messages_container';
 import ScheduleShowContainer from './messages/messages_container';

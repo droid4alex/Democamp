@@ -2,6 +2,7 @@ class Api::TodosController < ApplicationController
   def index
     @todos = Todo.all
     render 'api/todos/index.json.jbuilder'
+  # @todos_assigned = current_user.assigned_todos
   # @projects = current_user.owned_projects
   # @project = Project.find(params[:project_id])
   #   if @project
