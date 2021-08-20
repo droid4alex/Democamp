@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Schedule extends React.Component{
   constructor(props){
     super(props)
+    this.state = {
+      // projects: {},
+      // messages: {},
+      todos: {},
+      date: new Date()
+    }
   }
 
   scrollToBottom (){
@@ -13,14 +18,121 @@ class Schedule extends React.Component{
     });
   }
 
+  showDaysInMonth() {
+    let numDaysDate = new Date(this.state.date.getYear(), this.state.date.getMonth()+1,1)
+    numDaysDate.setDate(numDaysDate.getDate() - 1);
+    let numDays = numDaysDate.getDate();
+    let daysRemaining = [];
+    for (let i = 0; i < numDays; i++) {
+      daysRemaining.push(
+        <a className="card__link__schedule" key={i}>
+          <div className="card__content__schedule">
+            <h2 className="card__title flush" title="" data-role="content_filter_text">{i+1}</h2>
+            <p className="card__description flush" title="" data-role="content_filter_text"></p>
+          </div>
+        </a>
+      )
+    }
+    let dateYear = this.state.date.getFullYear().toString();
+    let dateMonth = (this.state.date.getMonth()+1).toString();
+    let values = Object.values(this.state.todos);
+    if (values.length > 0){
+      let todoYear;
+      let todoMonth;
+      for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
+        todoYear = values[i].due_date.slice(0, 4);
+        todoMonth = values[i].due_date.slice(6, 7);
+        if (dateYear === todoYear && dateMonth === todoMonth){
+          console.log("true")
+        }
+        console.log(dateYear + "-" + dateMonth + " todo " + todoYear + "-" + todoMonth);
+      }
+    }
+    return (
+      daysRemaining
+    )
+    // let values = Object.values(this.state.todos);
+    // if (values.length > 0) {
+    //   let currDate = new Date();
+    //   let todosRemaining = [];
+    //   let dueDate;
+    //   let dueTime;
+    //   for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
+    //     dueDate = values[i].due_date.slice(5, 10);
+    //     dueTime = values[i].due_date.slice(11, 19);
+        
+    //     if (!values[i].status) {
+    //       let href = "api/todos/" + values[i].id
+    //       todosRemaining.push(
+    //         <a className="card__link" href={href} key={i}>
+    //           <div className="card__content__schedule">
+    //             <h2 className="card__title flush" title="" data-role="content_filter_text">{dueDate}</h2>
+    //             <p className="card__description flush" title="" data-role="content_filter_text">{dueTime} {values[i].title}</p>
+    //           </div>
+    //         </a>
+    //       )
+    //     }
+    //   }
+    // }
+  }
+
+  getTodosRemaining() {
+
+    let values = Object.values(this.state.todos);
+    if (values.length > 0) {
+      let todosRemaining = [];
+      let dueYear;
+      let dueDate;
+      let dueTime;
+      let pObject;
+      for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
+        dueYear = values[i].due_date.slice(0, 4);
+        dueDate = values[i].due_date.slice(5, 10);
+        dueTime = values[i].due_date.slice(11,19);
+        console.log(dueYear)
+        if (!values[i].status) {
+          let href = "api/todos/" + values[i].id
+          todosRemaining.push(
+            <a className="card__link" href={href} key={i}>
+              <div className="card__content__schedule">
+                <h2 className="card__title flush" title="" data-role="content_filter_text">{dueDate}</h2>
+                <p className="card__description flush" title="" data-role="content_filter_text">{dueTime} {values[i].title}</p>
+              </div>
+            </a>
+          )
+        }
+      }
+      return (
+        todosRemaining
+      )
+    }
+  }
+
+  componentDidMount() {
+    this.props.fetchAllTodos().then(todos => {
+      this.setState(todos)
+    })
+  }
+
+  componentWillUnmount() {
+  }
+
   render(){
     return (
       <div>
         <header className="centered">
           <h3 className="project-index__header break break--on-background push--top push_half--bottom">
-            <span>My Schedule</span>
+            <span>{this.state.date.toLocaleString('default', { month: 'long' })} {this.state.date.getFullYear().toString()}</span>
           </h3>
         </header>
+        <div className="card-grid--projects" data-role="project_group_items">
+          {this.showDaysInMonth()}
+          <aside className="project-index__toolbar project-index__toolbar--new hide-from-clients" role="presentation" data-behavior="hide_when_content_filter_active">
+            <span className="options-menu options-menu--add-project" data-purpose="topic" data-behavior="expandable render_new_project_form_on_expand reveal_on_expand">
+              <button name="button" type="button" title="Start a new project…" className="options-menu__expansion-toggle btn btn--small btn--with-icon btn--add-icon" data-behavior="toggle_expansion_on_click">&nbsp; 	&nbsp; New</button>
+            </span>
+          </aside>
+        </div>
         <center>
           <div className="bc-tools grid__item grid__item--large push--top">
             <nav className="bc-tools__nav bc-tools__nav_nest">

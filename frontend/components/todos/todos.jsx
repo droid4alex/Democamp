@@ -21,15 +21,17 @@ class Todos extends React.Component{
     let values = Object.values(this.state.todos);
     if (values.length > 0) {
       let todosRemaining = [];
+      let dueDate;
       for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
-        console.log(values[i].status)
+        // dueTime = values[i].due_date.slice(11,19);
+        dueDate = values[i].due_date.slice(0, 10);
         if (!values[i].status){
           let href = "api/todos/" + values[i].id
           todosRemaining.push(
             <a className="card__link" href={href} key={i}>
               <div className="card__content__todo">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
-                Due: <p className="card__description flush" title="" data-role="content_filter_text">{values[i].due_date}</p>
+                <p className="card__description flush" title="" data-role="content_filter_text">Due: {dueDate}</p>
               </div>
             </a>
           )
