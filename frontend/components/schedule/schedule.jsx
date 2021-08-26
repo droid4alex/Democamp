@@ -22,19 +22,13 @@ class Schedule extends React.Component{
     let numDaysDate = new Date(this.state.date.getYear(), this.state.date.getMonth()+1,1)
     numDaysDate.setDate(numDaysDate.getDate() - 1);
     let numDays = numDaysDate.getDate();
-    let daysRemaining = [];
+    let daysInMonth = new Array();
     for (let i = 0; i < numDays; i++) {
-      daysRemaining.push(
-        <a className="card__link__schedule" key={i}>
-          <div className="card__content__schedule">
-            <h2 className="card__title flush" title="" data-role="content_filter_text">{i+1}</h2>
-            <p className="card__description flush" title="" data-role="content_filter_text"></p>
-          </div>
-        </a>
-      )
+      daysInMonth.push("")
     }
     let dateYear = this.state.date.getFullYear().toString();
     let dateMonth = (this.state.date.getMonth()+1).toString();
+    // let dueTime;
     let values = Object.values(this.state.todos);
     if (values.length > 0){
       let todoYear;
@@ -43,69 +37,45 @@ class Schedule extends React.Component{
         todoYear = values[i].due_date.slice(0, 4);
         todoMonth = values[i].due_date.slice(6, 7);
         if (dateYear === todoYear && dateMonth === todoMonth){
-          console.log("true")
+          // dueTime = values[i].due_date.slice(11, 19);
+          daysInMonth[parseInt(values[i].due_date.slice(8, 10))] += values[i].title + "."
         }
-        console.log(dateYear + "-" + dateMonth + " todo " + todoYear + "-" + todoMonth);
       }
     }
-    return (
-      daysRemaining
-    )
-    // let values = Object.values(this.state.todos);
-    // if (values.length > 0) {
-    //   let currDate = new Date();
-    //   let todosRemaining = [];
-    //   let dueDate;
-    //   let dueTime;
-    //   for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
-    //     dueDate = values[i].due_date.slice(5, 10);
-    //     dueTime = values[i].due_date.slice(11, 19);
-        
-    //     if (!values[i].status) {
-    //       let href = "api/todos/" + values[i].id
-    //       todosRemaining.push(
-    //         <a className="card__link" href={href} key={i}>
-    //           <div className="card__content__schedule">
-    //             <h2 className="card__title flush" title="" data-role="content_filter_text">{dueDate}</h2>
-    //             <p className="card__description flush" title="" data-role="content_filter_text">{dueTime} {values[i].title}</p>
-    //           </div>
-    //         </a>
-    //       )
-    //     }
-    //   }
-    // }
-  }
-
-  getTodosRemaining() {
-
-    let values = Object.values(this.state.todos);
-    if (values.length > 0) {
-      let todosRemaining = [];
-      let dueYear;
-      let dueDate;
-      let dueTime;
-      let pObject;
-      for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
-        dueYear = values[i].due_date.slice(0, 4);
-        dueDate = values[i].due_date.slice(5, 10);
-        dueTime = values[i].due_date.slice(11,19);
-        console.log(dueYear)
-        if (!values[i].status) {
-          let href = "api/todos/" + values[i].id
-          todosRemaining.push(
-            <a className="card__link" href={href} key={i}>
-              <div className="card__content__schedule">
-                <h2 className="card__title flush" title="" data-role="content_filter_text">{dueDate}</h2>
-                <p className="card__description flush" title="" data-role="content_filter_text">{dueTime} {values[i].title}</p>
-              </div>
-            </a>
-          )
-        }
-      }
-      return (
-        todosRemaining
+    let todosInDays = new Array();
+    for (let i = 0; i < numDays; i++) {
+      todosInDays.push(
+        <a className="card__link__schedule" key={i}>
+          <div className="card__content__schedule">
+            <h2 className="card__title flush" title="" data-role="content_filter_text">{i+1}</h2>
+            <p className="card__description flush" title="" data-role="content_filter_text">{daysInMonth[i]}</p>
+          </div>
+        </a>
       )
     }
+    return (
+      todosInDays
+    )
+  }
+
+  increaseMonth(){
+    let numDaysDate = new Date(this.state.date.getYear(), this.state.date.getMonth() + 1, 1)
+    numDaysDate.setDate(numDaysDate.getDate() - 1);
+    let numDays = numDaysDate.getDate();
+    this.state.date.setDate(this.state.date.getDate() + numDays)
+    let spanMo = document.getElementById("spanMo");
+    spanMo.innerHTML = " " + this.state.date.toLocaleString('default', { month: 'long' }) + " " + this.state.date.getFullYear().toString() + " "
+    this.render();
+  }
+
+  decreaseMonth() {
+    let numDaysDate = new Date(this.state.date.getYear(), this.state.date.getMonth() + 1, 1)
+    numDaysDate.setDate(numDaysDate.getDate() - 1);
+    let numDays = numDaysDate.getDate();
+    this.state.date.setDate(this.state.date.getDate() - numDays)
+    let spanMo = document.getElementById("spanMo");
+    spanMo.innerHTML = " " + this.state.date.toLocaleString('default', { month: 'long' }) + " " + this.state.date.getFullYear().toString() + " "
+    this.render();
   }
 
   componentDidMount() {
@@ -122,7 +92,9 @@ class Schedule extends React.Component{
       <div>
         <header className="centered">
           <h3 className="project-index__header break break--on-background push--top push_half--bottom">
-            <span>{this.state.date.toLocaleString('default', { month: 'long' })} {this.state.date.getFullYear().toString()}</span>
+            <button onClick={() => { this.decreaseMonth() }}>Prev</button>
+            <span id="spanMo"> {this.state.date.toLocaleString('default', { month: 'long' })} {this.state.date.getFullYear().toString()} </span>
+            <button onClick={() => { this.increaseMonth() }}>Next</button>
           </h3>
         </header>
         <div className="card-grid--projects" data-role="project_group_items">
