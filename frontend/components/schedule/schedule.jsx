@@ -38,7 +38,7 @@ class Schedule extends React.Component{
         todoMonth = values[i].due_date.slice(6, 7);
         if (dateYear === todoYear && dateMonth === todoMonth){
           // dueTime = values[i].due_date.slice(11, 19);
-          daysInMonth[parseInt(values[i].due_date.slice(8, 10))] += values[i].title + "."
+          daysInMonth[parseInt(values[i].due_date.slice(8, 10)) - 1] += values[i].title + "."
         }
       }
     }
@@ -92,10 +92,10 @@ class Schedule extends React.Component{
       <div>
         <header className="centered">
           <h3 className="project-index__header break break--on-background push--top push_half--bottom">
-            <button onClick={() => { this.decreaseMonth() }}>Prev</button>
             <span id="spanMo"> {this.state.date.toLocaleString('default', { month: 'long' })} {this.state.date.getFullYear().toString()} </span>
-            <button onClick={() => { this.increaseMonth() }}>Next</button>
           </h3>
+          <button onClick={() => { this.decreaseMonth() }}>Prev</button>
+          <button onClick={() => { this.increaseMonth() }}>Next</button>
         </header>
         <div className="card-grid--projects" data-role="project_group_items">
           {this.showDaysInMonth()}
