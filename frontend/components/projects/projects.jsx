@@ -19,25 +19,25 @@ class Projects extends React.Component {
       for (let i = 0; i < (Object.keys(this.state.projects).length); i++) {
         cardArrays.push(
           <a className="card__link" key={i} onClick={() => {console.log(values[i].get_class())}}>
-            <Link to={values[i].id + "/"}>
+            {/* <Link to={values[i].id + "/"}> */}
               <div className="card__content">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>
                 <p className="card__description flush" title="" data-role="content_filter_text">
                   {values[i].description}
                 </p>
                 <p className="card__description__icons flush" title="" data-role="content_filter_text">
-                  <Link to={values[i].id + "/todos/"}>
+                  {/* <Link to={values[i].id + "/todos/"}> */}
                     <svg className="bc-tools__icon__project" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg"><g fill="none"><circle cx="20" cy="20" fill="#3cb371" r="20" /><path d="m17.4 23.4758621-6.8714286-6.6344828-3.5285714 3.2275862 6.8714286 6.6344828 3.5285714 3.2275862 15.6-14.7034483-3.5285714-3.2275862z" fill="#fff" /></g></svg>
-                  </Link>
-                  <Link to={values[i].id + "/messages/"}>
+                  {/* </Link> */}
+                  {/* <Link to={values[i].id + "/messages/"}> */}
                     <svg className="bc-tools__icon__project" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg"><g fill="none"><circle cx="20" cy="20" fill="#1b6ac9" r="20" /><path d="m28.0459331 10h-15.9434943c-1.0512194 0-2.1024388.7246377-2.1024388 1.9927536v19.7463768l4.0296744-4.1666666h14.0162587c1.0512195 0 1.9272356-.9057971 1.9272356-1.9927537v-13.5869565c.1752033-.9057971-.5256097-1.8115942-1.5768291-1.9927536 0 0-.1752032 0-.3504065 0zm-1.5768291 13.5869565h-12.7898361v-1.4492753h12.9650394v1.4492753zm0-4.1666666h-12.7898361v-1.268116h12.9650394v1.268116zm0-3.9855073h-12.7898361v-1.2681159h12.9650394v1.2681159z" fill="#fff" /></g></svg>
-                  </Link>
-                  <Link to={values[i].id + "/schedule/"}>
+                  {/* </Link> */}
+                  {/* <Link to={values[i].id + "/schedule/"}> */}
                     <svg className="bc-tools__icon__project" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg"><g fill="none"><circle cx="20" cy="20" fill="#ff2d55" r="20" /><path d="m25.5555556 21.2692308h-5.5555556v5.576923h5.5555556zm-1.1111112-12.2692308v2.2307692h-8.8888888v-2.2307692h-2.2222223v2.2307692h-1.1111111c-1.2698412 0-2.2222222.956044-2.2222222 2.2307693v15.6153846c0 1.2747253.952381 2.2307692 2.2222222 2.2307692h15.5555556c1.2698412 0 2.2222222-.9560439 2.2222222-2.2307692v-15.6153846c0-1.2747253-.952381-2.2307693-2.2222222-2.2307693h-1.1111111v-2.2307692zm3.3333334 20.0769231h-15.5555556v-12.2692308h15.5555556z" fill="#fff" /></g></svg>
-                  </Link>
+                  {/* </Link> */}
                 </p>
               </div>
-            </Link>
+            {/* </Link> */}
           </a>
         )
       }
