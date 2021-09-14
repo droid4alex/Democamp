@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Democamp</title>
+  <meta name="title" property="og:title" content="Democamp Project Management App. Features include: Projects, To-dos, Messages, Schedule, Users." />
+  <meta name=”description” content="Democamp is a partial clone of Basecamp, an application for project management. The website has login and signup pages which allows the user to create an account or sign in. The user can try a demo login to test out our features if the user does not want to sign up for an account. There is a navigation bar at the top of the site to allow users to navigate through helpful options. Once users are logged in to Democamp they are redirected to the user dashboard. The user dashboard lists all project titles and descriptions that users have created. Each projects index page shows the cards for the todos, messages, and schedule components. Each components page shows the details for that component." />
+  <meta name="keywords" content="Democamp was written in Javascript, Redux and React, Rudy on Rails, HTML, CSS. Database is PostgresSQL. Heroku server host." />
+  <meta property="og:type" content="Website" />
+  <meta name="image" property="og:image" content="https://github.com/droid4alex/Democamp/raw/main/app/assets/images/democamp.gif" />
+  <meta name="author" content="Alex Lang" />
   <% if logged_in? %>
     <script type="text/javascript">
       window.currentUser = <%= render("api/users/user.json.jbuilder",
