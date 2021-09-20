@@ -50,7 +50,6 @@ class Todos extends React.Component{
     if (values.length > 0) {
       let todosComplete = [];
       for (let i = 0; i < (Object.keys(this.state.todos).length); i++) {
-        console.log(values[i].status)
         if (values[i].status) {
           let href = "api/todos/" + values[i].id
           todosComplete.push(

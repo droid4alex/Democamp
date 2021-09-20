@@ -53,8 +53,7 @@ class Messages extends React.Component{
 
   componentDidMount() {
     this.props.fetchAllMessages().then(messages => {
-      this.setState(messages)
-      // console.log(projects)      
+      this.setState(messages)    
     })
   }
 
