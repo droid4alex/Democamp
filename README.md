@@ -1,6 +1,6 @@
 # Democamp
 
-## [Link to live site](https://democamp-app.herokuapp.com/#/)
+## [Link to live site](https://democampapp.herokuapp.com/#/)
 
 ![splash](https://github.com/droid4alex/Democamp/raw/main/app/assets/images/democamp.gif)
 
