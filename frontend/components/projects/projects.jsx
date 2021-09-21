@@ -49,8 +49,7 @@ class Projects extends React.Component {
 
   componentDidMount (){
     this.props.fetchAllProjects().then(projects => {
-      this.setState(projects)
-      // console.log(projects)      
+      this.setState(projects)   
     })
   }
 
@@ -58,12 +57,6 @@ class Projects extends React.Component {
   }
 
   setProjectState(project){
-    
-    // console.log(project.id)
-    // console.log(this.state)
-    // this.setState(project.id)
-    // console.log(this.state)
-    // debugger
   }
   // showModal = () => {
   //   this.setState({ show: true });
