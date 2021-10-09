@@ -18,7 +18,7 @@ class Projects extends React.Component {
       let cardArrays = [];
       for (let i = 0; i < (Object.keys(this.state.projects).length); i++) {
         cardArrays.push(
-          <a className="card__link" key={i} onClick={() => {console.log(values[i].get_class())}}>
+          <a className="card__link" key={i} onClick={() => {console.log(1)}}>
             {/* <Link to={values[i].id + "/"}> */}
               <div className="card__content">
                 <h2 className="card__title flush" title="" data-role="content_filter_text">{values[i].title}</h2>

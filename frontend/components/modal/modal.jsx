@@ -1,51 +1,45 @@
 import React from 'react';
+import { closeModal } from '../../actions/message_actions';
 import { connect } from 'react-redux';
+import Projects_Show_Container from '../projects_show/projects_show_container';
 
-function MyVerticallyCenteredModal(props) {
+function Modal({ modal, closeModal }) {
+  if (!modal) {
+    return null;
+  }
+
+  let component;
+  component = <Projects_Show_Container />;
+  // switch (modal) {
+  //   case 'login':
+  //     component = <Projects_Show_Container />;
+  //     break;
+  //   case 'signup':
+  //     component = <Projects_Show_Container />;
+  //     break;
+  //   default:
+  //     component = <Projects_Show_Container Object={modal} />;
+  //     break;
+  // }
   return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
+    <div className="modal-background" onClick={closeModal}>
+      <div className="modal-child" onClick={e => e.stopPropagation()}>
+        {component}
+      </div>
+    </div>
   );
 }
 
-function App() {
-  const [modalShow, setModalShow] = React.useState(false);
+const mapStateToProps = state => {
+  return {
+    modal: state.ui.modal
+  };
+};
 
-  return (
-    <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
+const mapDispatchToProps = dispatch => {
+  return {
+    closeModal: () => dispatch(closeModal())
+  };
+};
 
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
-    </>
-  );
-}
-
-render(<App />);
-
-export function MyVerticallyCenteredModal(props);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
